@@ -1,0 +1,80 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+	
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+<title>Distance and angle</title>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">二次元軌跡から，移動速度，角度変化を求める方法-01</p>
+<p>大腸菌の遊泳，など二次元映像から<span class="Large-Bold-Blue">移動速度</span>，<span class="Large-Bold-Blue">角度変化</span>を求める，ことがよくあります．</p>
+<p>その際の数学を検討しましょう．</p>
+<p><img src="velocity-angle-01.png" width="647" height="456" alt=""/></p>
+<p>図のように，ｔ，ｔ＋Δｔ，ｔ＋２Δｔ，という3点を考えていきます．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・移動距離</p>
+<p>これは簡単で，</p>
+<p>\( \Large  \displaystyle   \Delta r_1 = \sqrt{(x_{t+ \Delta t } - x_{t })^2 + (y_{t+ \Delta t } - y_{t })^2} \)</p>
+<p>\( \Large   \displaystyle  \Delta r_2 = \sqrt{(x_{t+ 2 \Delta t } - x_{t+ \Delta t })^2 + (y_{t+2 \Delta t } - y_{t+ \Delta t })^2} \)</p>
+<p>を計算すればいいだけです．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・角度変化</p>
+<p>これがいろいろ厄介ですが，理解してみるとそんなに難しくはなかったです．</p>
+<p>メインは，<span class="Blue-Bold">内積</span>，です．内積は，二次元空間においては，</p>
+<p>\( \Large  \displaystyle   \vec{a} \cdot \vec{b} = |\vec{a}| | \vec{b}| \ cos \ \theta = a_x \ b_x + a_y \ b_y \)</p>
+<p>からθを計算することができます．</p>
+<p>\( \Large  \displaystyle   \theta = cos^{-1} \left[ \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| | \vec{b}|} \right] \)</p>
+<p>しかし，このままでは角度がわかっても，どちらの向きかはわかりません．</p>
+<p>そこで，登場するのが，<span class="Blue-Bold">外積</span>，です．</p>
+<p><span class="Blue-Bold">外積</span>は，二次元空間においては，</p>
+<p>\( \Large  \displaystyle   \vec{a} \times \vec{b} = |\vec{a}| | \vec{b}| \sin \ \theta = a_x \ b_y - a_y \ b_x \)</p>
+<p>となります．したがって，</p>
+<p>\( \Large  \displaystyle tan   \ \theta = \frac{ sin \ \theta}{ cos \ \theta } = \frac{\vec{a} \times \vec{b}}{|\vec{a}| | \vec{b}|} \frac{|\vec{a}| | \vec{b}|}{{   \vec{a} \cdot \vec{b}}}  = \frac{\vec{a} \times \vec{b}}{   \vec{a} \cdot \vec{b}} \)</p>
+<p>\( \Large  \displaystyle  \theta = tan^{-1} \left(  \frac{\vec{a} \times \vec{b}}{   \vec{a} \cdot \vec{b}} \right) \)</p>
+<p>で計算できます．</p>
+<p>象限を厳密に考えると，</p>
+<p>\( \Large  \displaystyle  \theta = atan2 \left(  \vec{a} \times \vec{b}, \    \vec{a} \cdot \vec{b} \right) \)</p>
+<p>の計算を行えばいいことになります．</p>
+<p>&nbsp;</p>
+<p>実際の計算では，それぞれの位置を<span class="Blue-Bold">ベクトル</span>で表さなければいけないので，</p>
+<p>\( \Large  \displaystyle  t \ : \hspace{40 pt} a_x = x_{t + \Delta t} - x_t,  \hspace{40 pt}  a_y = y_{t + \Delta t} -y_t \)</p>
+<p>\( \Large  \displaystyle  t + \Delta t : \hspace{4 pt}  \ b_x = x_{t + 2 \Delta t} - x_{t + \Delta t},  \hspace{20 pt}  b_y = y_{t + 2 \Delta t} -y_{t + \Delta t} \)</p>
+<p>を計算してからとなります．</p>
+<p>&nbsp;</p>
+<p>ただし，ややこしいのが，<a href="atan2-01.html">ここ</a>，に記したように，<span class="Blue-Bold">atan2</span>．．．．使うソフトによって使い方が異なります．</p>
+<p class="Large-Bold-Blue">atan2<span class="X-Large-Bold-Blue">(x,y)</span>　：　エクセル，GoogleSheets, Numbers, Kyplot</p>
+<p class="Large-Bold-Blue">atan2<span class="X-Large-Bold-Blue">(y,x)</span>　：　Python, R</p>
+<p>などです．エクセル互換性のあるソフトは，エクセルに準じているようです．</p>
+<p>なぜこんな混乱があるかは，よく知りませんが，それぞれのソフトに適した使い方をしていかなくてはならないですね．</p>
+<p>&nbsp;</p>
+<p>次ページに，具体的な数値を使って計算していきましょう．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="velocity-angle-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

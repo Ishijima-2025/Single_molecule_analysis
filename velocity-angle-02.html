@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Circuit</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">二次元軌跡から，移動速度，角度変化を求める方法-02</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p>前ページにあるように，</p>
+<p class="Large-Bold-Red">・移動距離</p>
+<p>\(\Large   \Delta r =   \displaystyle \sqrt{ (x_{t + \Delta t} - x_t)^2 + (y_{t + \Delta t} - y_t)^2} \)　</p>
+<p><span class="Large-Bold-Red">・角度</span></p>
+<p>\(\Large   \theta =   \displaystyle tan^{-1} \left( \frac{\vec{a} \times \vec{b}}{\vec{a} \cdot \vec{b}}\right) \)　</p>
+<p>でした．　この角度が右回りか，左回りかは，分母の内積は＋の値ですから，分子の外積によるものと思われます．</p>
+<p>外積は，</p>
+<p>\(\Large\vec{a} \times \vec{b} = a_x \ b_y - a_y \ b_x \)　</p>
+<p>となります．ベクトルa,bの角度は（第一象限で考えると），</p>
+<p>\(\Large\theta_a = \frac{a_y}{a_x} \)　</p>
+<p>\(\Large\theta_b = \frac{b_y}{b_x} \)　</p>
+<p>となり，もし反時計回りなら，</p>
+<p>\(\Large\theta_b &gt; \theta_a\)　</p>
+<p>となり，</p>
+<p>\(\Large \frac{b_y}{b_x} &gt; \frac{a_y}{a_x}\)　</p>
+<p>\(\Large a_x \ b_y - a_y \ b_x &gt; 0 \)　</p>
+<p>となるため，外積が，</p>
+<p class="Large-Bold-Red">　＋　：　反時計回り<br />
+　-　　：　時計回り</p>
+<p>となります．</p>
+<p>では，角度変化の計算を具体的な数値を元に計算していきましょう．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・具体的な手順</p>
+<p>具体的な手順としては，</p>
+<p class="Blue-Bold">　１．　時系列上の各点の座標から，一つ前の座標からの差分を計算し，それぞれのベクトルを求める．</p>
+<p class="Blue-Bold">　２．　一つ前のベクトルとの内積，外積を計算し，移動距離，角度を計算する</p>
+<p>でした．実際に単純なデータから手順を見ていきましょう．</p>
+<p>まずは，簡単なデータ列を作成します．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・角度変化：０</p>
+<table width="200" border="1">
+  <tbody>
+    <tr>
+      <td style="text-align: center">x</td>
+      <td style="text-align: center">y</td>
+      <td style="text-align: center">Δx</td>
+      <td style="text-align: center"><p>Δy</p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+<p><img src="distance-angle-10.png" width="460" height="495" alt=""/></p>
+<p>一直線ですので，角度変化は０のはず，計算してみましょう．</p>
+<p>\(\Large\vec{a} \cdot \vec{b} = a_x \ b_x - a_y \ b_y = 2 \times 2 + 1 \times 1 = 5 \)　</p>
+<p>\(\Large\vec{a} \times \vec{b} = a_x \ b_y - a_y \ b_x =  2 \times 1 - 2 \times 1 = 0\)　</p>
+<p>\(\Large   \theta =   \displaystyle tan^{-1} \left( \frac{\vec{a} \times \vec{b}}{\vec{a} \cdot \vec{b}}\right) = tan^{-1} \left( \frac{0}{5}\right) = 0\)　</p>
+<p>となり，<span class="Blue-Bold">角度変化は０</span>であることがわかります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・角度変化：＋</p>
+<table width="200" border="1">
+  <tbody>
+    <tr>
+      <td style="text-align: center">x</td>
+      <td style="text-align: center">y</td>
+      <td style="text-align: center">Δx</td>
+      <td style="text-align: center"><p>Δy</p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">3</td>
+    </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<p><img src="distance-angle-11.png" width="458" height="431" alt=""/></p>
+<p>計算してみましょう．</p>
+<p>\(\Large\vec{a} \cdot \vec{b} = a_x \ b_x - a_y \ b_y = 2 \times 1 + 1 \times 3 = 5 \)　</p>
+<p>\(\Large\vec{a} \times \vec{b} = a_x \ b_y - a_y \ b_x =  2 \times 3 - 1 \times 1 = 5\)　</p>
+<p>\(\Large   \theta =   \displaystyle tan^{-1} \left( \frac{\vec{a} \times \vec{b}}{\vec{a} \cdot \vec{b}}\right) = tan^{-1} \left( \frac{5}{5}\right) = 45^o\)　</p>
+<p>となり，<span class="Blue-Bold">角度変化は45度</span>であり，<span class="Blue-Bold">θ<sub>b</sub> > θ<sub>a</sub></span>であるので<span class="Blue-Bold">外積がプラス</span>であることがわかります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・角度変化：-</p>
+<table width="200" border="1">
+  <tbody>
+    <tr>
+      <td style="text-align: center">x</td>
+      <td style="text-align: center">y</td>
+      <td style="text-align: center">Δx</td>
+      <td style="text-align: center"><p>Δy</p></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">&nbsp;</td>
+      <td style="text-align: center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center"><p>2</p></td>
+      <td style="text-align: center">-1</td>
+    </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<p><img src="distance-angle-12.png" width="458" height="431" alt=""/></p>
+<p>計算してみましょう．</p>
+<p>\(\Large\vec{a} \cdot \vec{b} = a_x \ b_x - a_y \ b_y = 2 \times 2 + 1 \times (-1) = 3 \)　</p>
+<p>\(\Large\vec{a} \times \vec{b} = a_x \ b_y - a_y \ b_x =  2 \times (-1) - 1 \times 2 = -4\)　</p>
+<p>\(\Large   \theta =   \displaystyle tan^{-1} \left( \frac{\vec{a} \times \vec{b}}{\vec{a} \cdot \vec{b}}\right) = tan^{-1} \left( \frac{-4}{3}\right) = -53.1^o\)　</p>
+<p>となり，<span class="Blue-Bold">角度変化は-53度</span>であり，<span class="Blue-Bold">θ<sub>b</sub> &lt; θ<sub>a</sub></span>であるので<span class="Blue-Bold">外積がマイナス</span>であることがわかります．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>　</p>
+<p><span class="style7"><a href="velocity-angle-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
