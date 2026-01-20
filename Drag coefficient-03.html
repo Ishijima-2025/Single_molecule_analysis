@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Drag coefficient-03</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">微小物体の粘性抵抗係数-02</h1>
+
+<p>次には<span class="Large-Bold-Red">並進</span>から．</p>
+<table width="514" height="308" border="1">
+  <tr>
+    <td width="106" height="55">Parameter</td>
+    <td width="178">Direction</td>
+    <td width="208"><p>Cylinder<br />
+      (L&gt;&gt;r)</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><img src="Drag coefficient-cylinder.png" width="151" height="69" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp; \(\Large \gamma_{ \parallel }\)</td>
+    <td>&nbsp; <img src="Drag coefficient-Long.png" width="153" height="27" /></td>
+    <td>&nbsp; \(\Large \frac{2 \pi \eta L}{ln(L/(2r))-0.20} \)</td>
+  </tr>
+  <tr>
+    <td>&nbsp; \(\Large \gamma_{ \perp } \)</td>
+    <td>&nbsp; <img src="Drag coefficient-Short.png" width="103" height="71" /></td>
+    <td>&nbsp; \(\Large \frac{4 \pi \eta L}{ln(L/(2r))+0.84} \)</td>
+  </tr>
+</table>
+<p>並進の場合にも分母にｌｎが入っているので，<span class="Large-Bold-Blue">Ｌ≒ｒの場合にはこの式は適用できない</span>ことになります．</p>
+<p>元論文は，</p>
+<p>Translational friction coefficients of rigid, symmetric top macromolecules. Application to circular cylinders <br />
+Maria M. Tirado and José García de la Torre<br />
+J. Chem. Phys. 71, 2581 (1979)</p>
+<p>です．Table I.，に，</p>
+<table width="288" border="1">
+  <tr>
+    <td width="102" height="29"><div align="center">p<sup>-1</sup></div></td>
+    <td width="82"><div align="center">γ<sub>⊥</sub></div></td>
+    <td width="82"><div align="center">γ<sub>∥</sub></div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0.50</div></td>
+    <td><div align="center">0.99</div></td>
+    <td><div align="center">0.25</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0.46</div></td>
+    <td><div align="center">0.97</div></td>
+    <td><div align="center">0.21</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0.42</div></td>
+    <td><div align="center">0.96</div></td>
+    <td><div align="center">0.18</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0.38</div></td>
+    <td><div align="center">0.94</div></td>
+    <td><div align="center">0.14</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0.33</div></td>
+    <td><div align="center">0.92</div></td>
+    <td><div align="center">0.10</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0.30</div></td>
+    <td><div align="center">0.91</div></td>
+    <td><div align="center">0.07</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0.25</div></td>
+    <td><div align="center">0.90</div></td>
+    <td><div align="center">0.03</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0.20</div></td>
+    <td><div align="center">0.88</div></td>
+    <td><div align="center">-0.02</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0.17</div></td>
+    <td><div align="center">0.87</div></td>
+    <td><div align="center">-0.05</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0.10</div></td>
+    <td><div align="center">0.86</div></td>
+    <td><div align="center">-0.11</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0.06</div></td>
+    <td><div align="center">0.85</div></td>
+    <td><div align="center">-0.15</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0.02</div></td>
+    <td><div align="center">0.84</div></td>
+    <td><div align="center">-0.18</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0</div></td>
+    <td><div align="center">0.84</div></td>
+    <td><div align="center">-0.20</div></td>
+  </tr>
+</table>
+<p>なる表があります．</p>
+<p>\(\Large p = L/(2r) \)</p>
+<p>と定義されていますので，<span class="Red-Bold">Ｌが十分長い場合（p<sup>-1</sup>=0)には上記式の分母の係数，長軸方向の場合の-0.20，短軸方向の場合の0.84，と一致</span>します．</p>
+<p>このテーブルの関係は，</p>
+<p><img src="Drag coefficient-Rotation-6.png" width="389" height="311" /></p>
+<p>と直線関係になるので，上記の式を変形してみましょう．すると，</p>
+<p>&nbsp; \(\Large \gamma_{ \parallel } = \frac{2 \pi \eta L}{ln(L/(2r)) + 0.9 \frac{2r}{L} -0.20} \)</p>
+<p>&nbsp; \(\Large \gamma_{ \perp } = \frac{4 \pi \eta L}{ln(L/(2r)) + 0.2981 \frac{2r}{L} +0.8291} \)</p>
+<p>となります．この式を描いてみると，</p>
+<p><img src="Drag coefficient-Rotation-7.png" width="568" height="492" /></p>
+<p><img src="Drag coefficient-Rotation-8.png" width="567" height="492" /></p>
+<p>となり，かなりいい感じとなります．</p>
+<p>先に述べましたように，たぶんこの論文に描かれているこの表は理論的・実験的な根拠があるわけではなく，多項式近似式を当てはめただけと思いますので，便宜上と思われます．</p>
+<p>これでとりあえずはアスペクト比の小さい円柱の場合の粘性抵抗係数を見積もることが可能となります．</p>
+<p>きちんと計算したわけではありませんが，元となるナビエ-ストークスの法則自体が近似値なので，厳密解というよりはオーダーレベルの議論にとどめておいた方がよいかと思います．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Drag coefficient-02.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+</body>
+</html>

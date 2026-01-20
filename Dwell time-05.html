@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dwell time-05</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">一分子の化学反応論 ー 競争反応-02</h1>
+<p>\(\Large \require{AMScd} \begin{CD} B @&gt;&gt;k_A&gt; A \\<br />
+@VVk_CV\\C \end{CD}  \) </p>
+<p>速度定数だけを考えると，<br />
+  B→A：k<sub>A</sub><br />
+  B→C：k<sub>C</sub> <br />
+  となり，その逆数が反応時間となると考えられますが，競争反応場合は事情が異なるようです．<br />
+  B→Aへの反応時間は指数関数的に分布しますが， 　<span class="Large-Bold-Red">Aへの反応が起こる前にCへの反応が起こる場合</span>があります．<br />
+  その場合には，Aへは行かずにCに行くこととなるので，<span class="Large-Bold-Red">Aへ行く反応における時間分布のうち，長い時間は起こりにくく</span>なります． </p>
+<p>つまり，<br />
+　<span class="Large-Bold-Blue">さいころで６がでるまでの回数を計測しているときに，４が出たらその計測はキャンセル</span><br />
+と言うように．</p>
+<p><img src="Dwell time-04.png" width="400" height="451" /></p>
+<p>上図のように，<span class="Large-Bold-Red">B→Aの反応のうち，ｔ１秒で起こる確率は，B→Cの反応の緑部分のみ</span>であると言うことです．<br />
+</p>
+<p>つまり，B→Aの反応において，t1で起こる場合，<span class="Blue-Bold">B→Cの反応がt1秒以下で起こるとAへは移行しない</span>．<br />
+B→Aの反応はB→Cがt1秒以降の割合に減少することになる．従って，B→Aへの反応時間は以下のように書き直すことができます．</p>
+<p>\(\Large \begin{eqnarray} P(t_1) &amp;=&amp; k_A \cdot exp(-k_A \cdot t_1) \times \displaystyle \int_{ - t_1 }^{ \infty } k_C \cdot exp(-k_C \cdot t_2 ) 
+dt_2\\<br />
+&amp;=&amp;  k_A \cdot exp(-k_A \cdot t_1) \times \left[ exp(-k_C \cdot t_2) \right]_{t_1}^\infty \\<br />
+&amp;=&amp;  k_A \cdot exp(-k_A \cdot t_1) \times  exp(-k_C \cdot t_1)  \\<br />
+&amp;=&amp;  k_A \cdot exp \left[ -(k_A + k_C) \cdot t_1 \right]  \\<br />
+\end{eqnarray}　\)</p>
+<p>となります．この結果はまだ規格化されていないので，</p>
+<p>\(\Large    \begin{eqnarray} 1 &amp;=&amp; \alpha \times\displaystyle \int_{ 0 }^{ \infty }　k_A \cdot exp \left[ -(k_A + k_C) \cdot t_1 \right] dt_1 \\<br />
+  &amp;=&amp; -\frac{k_A}{k_A + k_C} \left[exp  \left[-(k_A + k_C) \cdot t_1\right] \right]_0^ \infty \\<br />
+  &amp;=&amp; \alpha \frac{k_A}{k_A + k_C} \\<br />
+  \end{eqnarray}　\)</p>
+<p>\(\Large \alpha = \frac{k_A + k_C}{k_A} \)</p>
+<p>となり，</p>
+<p>\(\Large P(t_1) = (k_A + k_C) \cdot exp \left[ -(k_A + k_C) \cdot t_1 \right]  \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>次ページにに，平均値を考えていきましょう．</p>
+<p><span class="style7"><a href="Dwell time-04.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Dwell time-06.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

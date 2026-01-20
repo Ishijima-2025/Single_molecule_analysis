@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dwell time-06</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">一分子の化学反応論 ー 競争反応-03</h1>
+<p>\(\Large \require{AMScd} \begin{CD} B @&gt;&gt;k_A&gt; A \\<br />
+@VVk_CV\\C \end{CD}  \) </p>
+<p>平均は，</p>
+<p>\(\Large &lt;t&gt; = \displaystyle \int_{ 0 }^{ \infty } t_1 \cdot P(t_1) \cdot dt_1 =\displaystyle \int_{ 0 }^{ \infty } t_1 \cdot (k_A + k_C) \cdot exp \left[ -(k_A + k_C) \cdot t_1 \right] dt_1 \)</p>
+<p>となります．</p>
+<p>部分積分の公式より，</p>
+<p>\(\Large (f \cdot g)' = f' \cdot g + f \cdot g' \)</p>
+<p>\(\Large f' \cdot g = (f \cdot g)' - f \cdot g' \)</p>
+<p>\(\Large \int f' \cdot g = (f \cdot g) - \int f \cdot g' \)</p>
+<p>となります．ここで，</p>
+<p>\(\Large f'=exp \left[ -(k_A + k_C) \cdot t_1 \right],  \quad g = t_1 \)</p>
+<p>\(\Large f=-\frac{1}{k_A + k_C} exp \left[ -(k_A + k_C) \cdot t_1 \right],  \quad g' = t_1 \)</p>
+<p>とおけば，</p>
+<p>\(\Large \begin{eqnarray} &lt;t&gt; &amp;=&amp; \displaystyle \int_{ 0 }^{ \infty } t_1 \cdot (k_A + k_C) \cdot exp \left[ -(k_A + k_C) \cdot t_1 \right] dt_1 \\<br />
+&amp;=&amp; (k_A + k_C) \cdot \left[ -\frac{1}{k_A + k_C} exp \left[ -(k_A + k_C) \cdot t_1 \right] \times t_1 \right]_0^ \infty<br />
+-(k_A + k_C)\displaystyle \int_{ 0 }^{ \infty} -\frac{1}{k_A + k_C} exp \left[ -(k_A + k_C) \cdot t_1 \right] dt_1\\<br />
+&amp;=&amp; 
+-\frac{k_A + k_C}{(k_A + k_C)^2} \left[ exp \left[ -(k_A + k_C) \cdot t_1 \right] \right] _0^{ \infty} \\<br />
+&amp;=&amp; 
+\frac{1}{k_A + k_C} \\<br />
+\end{eqnarray}　\)</p>
+<p>となり，<span class="Large-Bold-Blue">反応にかかる時間は，それぞれの速度定数の和の逆数</span>となります．</p>
+<p>ここで，興味深い点は，<br />
+　<span class="Large-Bold-Red">k<sub>A</sub>, k<sub>C</sub>が同等である</span><br />
+と言うことです．つまり，<br />
+　<span class="Large-Bold-Red">B，Cへのどちらの反応も平均反応時間は同じ</span><br />
+となります．もちろん，最終的な割合は異なりますが（計算は<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Chemical%20reactin-07.html">こちら</a>）．</p>
+<p>実際のモンテカルロシュミレーションでは，<br />
+</p>
+<p><img src="Dwell time-03.png" width="633" height="389" /></p>
+<p>となり，</p>
+<p>\(\Large &lt;t&gt; = \frac{1}{k_A + k_C} \)</p>
+<p>となります(1/(1+1)=0.5)．速度定数を変えると，</p>
+<p><img src="Dwell time-05.png" width="622" height="382" /></p>
+<p>となり，A，Cどちらの反応にかかる時間も，</p>
+<p>\(\Large &lt;t&gt; = \frac{1}{k_A + k_C} \)</p>
+<p>となります(1/(1+2)=0.33)．</p>
+<p>次ページに，<span class="Large-Bold-Blue">平衡・逐次反応</span>について考えていきましょう．</p>
+<p><span class="style7"><a href="Dwell time-05.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Dwell time-07.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

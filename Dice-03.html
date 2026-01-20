@@ -1,0 +1,94 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dice</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+
+	
+
+
+
+<link href="../../../../Documents/HomePage/160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+<title>Laplace</title>
+</head>
+
+<body>
+<p class="Large-Bold-RED">サイコロを振って，”６”が出るまでの回数はどのような分布になるか?</p>
+<p class="X-Large-Blue">平均値はいくらか?</p>
+<p>平均値を求めるには，</p>
+<p>　\( \Large      \displaystyle        \sum_{n=1}^{\infty} n \cdot P(n)  \)</p>
+<p>を求めればいいわけです．<br />
+しかし．．．どう計算してよいか悩み．．．<a href="http://www.yasunaga-lab.bio.kyutech.ac.jp/ja/" target="_blank">九工大の安永さん</a>に助けてもらいました．</p>
+<p>まずは，前回の規格化の式，</p>
+<p>　\( \Large      \displaystyle        \sum_{n=1}^{\infty} e^{an} = \frac{e^a}{1 - e^a} =\frac{1}{ e^{-a}-1}\)</p>
+<p>を使います．この両辺を，a，で微分すると，</p>
+<p>　\( \Large      \displaystyle        \frac{d}{da} \sum_{n=1}^{\infty} e^{an}  =        \frac{d}{da} \frac{1}{ e^{-a}-1}\)</p>
+<p>　\( \Large      \displaystyle         \sum_{n=1}^{\infty} n \ e^{an}  =        \frac{e^{-a}}{ \left( e^{-a}-1 \right)^{2}}\)</p>
+<p>　\( \Large      \hspace{56pt} \displaystyle           =        \frac{e^{-a}}{ \left( e^{-a}-1 \right)^{2}} \frac{e^{2a}}{e^{2a}} \)</p>
+<p>　\( \Large      \hspace{56pt} \displaystyle           =        \frac{e^{a}}{ \left( 1 - e^{a} \right)^{2}}  \)</p>
+<p>を得ることができます．</p>
+<p>ここで，</p>
+<p>&nbsp;</p>
+<p>　\( \Large      \displaystyle        a =   ln  \left( \frac{5}{6} \right)  \)</p>
+<p>　\( \Large      \displaystyle          e^a   =\frac{5}{6}\)</p>
+<p>とすると，</p>
+<p>　\( \Large      \displaystyle        \sum_{n=1}^{\infty} n \cdot P(n) = \frac{1}{5}  \sum_{n=1}^{\infty} n \ EXP \left[ n \cdot  ln  \left( \frac{5}{6} \right) \right] <br>
+  =
+  \frac{1}{5}  \sum_{n=1}^{\infty} n \ e^{an}<br>
+  =
+  \frac{1}{5}  \frac{e^a}{(1 - e^a)^2} \)</p>
+<p>したがって，</p>
+<p>　\( \Large      \displaystyle          =
+\frac{1}{5}  \frac{5/6}{(1 - 5/6)^2} <br>
+=
+\frac{1}{5}  \frac{5/6}{(1/6)^2} = 6\)</p>
+<p>となり，見事平均は６，つまり，平均６回サイコロを振ると６が出る，と言うことになります．</p>
+<p>&nbsp;</p>
+<p class="Large-Blue">別解</p>
+<p>違う方法での解法もありました．</p>
+<p>　\( \Large      \displaystyle        &lt;P&gt; = \sum_{n=1}^{\infty} n \cdot P(n) =
+  \frac{1}{5}  \sum_{n=1}^{\infty} n \ e^{an} <br>
+  =
+  \frac{1}{5} \left[ e^{a} + 2e^{2a} + 3e^{3a} +....... \right] \)</p>
+<p>　\( \Large      \displaystyle        e^{a}  \)　を掛けると，</p>
+<p>　\( \Large      \displaystyle        e^{a} \ &lt;P&gt;  \hspace{150pt} = \frac{1}{5} \left[ \hspace{36pt} e^{2a} + 2e^{3a} + 3e^{4a} +....... \right] \)</p>
+<p>その差分は，</p>
+<p>\( \Large      \displaystyle        &lt;P&gt; -         e^{a} \ &lt;P&gt;<br>
+=
+\frac{1}{5} \left[ e^{a} + e^{2a} + e^{3a} +....... \right] \)</p>
+<p>右辺は，規格化の式より，１となるので，</p>
+<p>\( \Large      \displaystyle        &lt;P&gt; -         e^{a} \ &lt;P&gt;<br>
+=
+1 \)</p>
+<p>\( \Large      \displaystyle        &lt;P&gt; = \frac{1}{1-         e^{a}} = \frac{1}{1-5/6} =6\)</p>
+<p>と上の結果と同じ結果となりました．</p>
+<p>&nbsp;</p>
+<p><span class="style10"><a href="Dice-02.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Dice-04.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+</body>
+</html>

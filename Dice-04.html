@@ -1,0 +1,86 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dice</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+	
+
+
+
+<link href="../../../../Documents/HomePage/160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+<title>Laplace</title>
+</head>
+
+<body>
+<p class="Large-Bold-RED">サイコロを振って，”６”が出るまでの回数はどのような分布になるか?</p>
+<p class="X-Large-Blue">分散値はいくらか?</p>
+<p>分散値を求めるには，なかなかややこしい計算ですが，<a href="https://shoichimidorikawa.github.io/Lec/prob_stat/ProbMain.pdf" target="_blank">こちらのサイト</a>，を参考にしました，ありがとうございます．</p>
+<p>いままでの計算をまとめると，</p>
+<p>\( \Large      \displaystyle         P(n)  = \frac{1}{5} e^{an} \)</p>
+<p>　\( \Large      \displaystyle          e^a   =\frac{5}{6}\)</p>
+<p><span class="Blue-Bold">規格化</span>を，</p>
+<p>　\( \Large      \displaystyle        S_0 \equiv \sum_{n=1}^{\infty} P(n) = 1\)</p>
+<p><span class="Blue-Bold">平均値</span>を，</p>
+<p>　\( \Large      \displaystyle        S_1 \equiv \sum_{n=1}^{\infty} n P(n) = 6\)</p>
+<p><span class="Blue-Bold">二乗平均値</span>を，</p>
+<p>　\( \Large      \displaystyle        S_2 \equiv \sum_{n=1}^{\infty} n^2 P(n) \)</p>
+<p>とした場合に，<span class="Blue-Bold">分散値</span>は，</p>
+<p>　\( \Large      \displaystyle        Var = S_2 - S_1^2 \)</p>
+<p>となる値を求めたいのです．</p>
+<p>&nbsp;</p>
+<p>まずは，S<sub>2</sub></p>
+<p>　\( \Large      \displaystyle S_2 =      \frac{1}{5} \sum_{n=1}^{\infty} n^2 e^{an} <br>
+= \frac{1}{5} \left[ e^a + 4 e^{2a} + 9 e^{3a} +.... \right] \)</p>
+<p>\( \Large      \displaystyle        e^{a}  \)　を掛けると，</p>
+<p>　\( \Large      \displaystyle e^{a} S_2 <br>
+\hspace{77pt} = \frac{1}{5} \left[  \hspace{36pt} e^{2a} + 4 e^{3a} + 9 e^{4a} +.... \right] \)</p>
+<p>その差分は，</p>
+<p>　\( \Large      \displaystyle (1 - e^a) S_2 <br>
+\hspace{40pt} = \frac{1}{5} \left[ e^a + 3 e^{2a} + 5 e^{3a} +.... \right] \)</p>
+<p>となります．</p>
+<p>また，</p>
+<p>　\( \Large      \displaystyle S_0 =      \frac{1}{5} \sum_{n=1}^{\infty}  e^{an} <br>
+= \frac{1}{5} \left[ e^a +  e^{2a} +  e^{3a} +.... \right] \)</p>
+<p>　\( \Large      \displaystyle 2 S_1 =      2 \cdot \frac{1}{5} \sum_{n=1}^{\infty}n  e^{an} <br>
+= \frac{1}{5} \left[ 2 e^a +  4 e^{2a} +  6 e^{3a} +.... \right] \)</p>
+<p>その差分は，</p>
+<p>　\( \Large      \displaystyle 2 S_1 - S_0 <br>
+= \frac{1}{5} \left[  e^a +  3 e^{2a} +  5 e^{3a} +.... \right] \)</p>
+<p>と，　\( \Large      \displaystyle (1 - e^a) S_2\)，と等しくなります．したがって，</p>
+<p>\( \Large      \displaystyle (1 - e^a) S_2 = 2 S_1 - S_0\)</p>
+<p>\( \Large      \displaystyle  S_2 = \frac{2 S_1 - S_0}{1 - e^a}<br>
+  = \frac{12 - 1}{ 1- 5/6} =
+\frac{11}{ 1/6} = 66\)</p>
+<p>\( \Large      \displaystyle        Var = S_2 - S_1^2 = 66 - 6^2 =30 \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style10"><a href="Dice-03.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Dice-05.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+</body>
+</html>

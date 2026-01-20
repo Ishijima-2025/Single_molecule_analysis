@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dwell time-08</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">一分子の化学反応論 ー 平衡・逐次反応-02</h1>
+<p>この計算は，<a href="numerical sequence-01.html">ここ</a>，を参考にして，</p>
+<p>\(\Large \begin{eqnarray}  t_1 \cdot \alpha \cdot \displaystyle \sum_{ n = 0 }^{ \infty} (n+1)(1- \alpha)^n<br />
+&amp;=&amp; 
+  t_1 \cdot \alpha \cdot \frac{1}{1-(1- \alpha)^2} \\<br />
+  &amp;=&amp; \frac{t_1}{ \alpha} \\<br />
+  &amp;=&amp; \frac{\frac{1}{k_B} + \frac{1}{k_A+k_C}}{\frac{k_A}{k_A+k_C}} \\
+  <br />
+  &amp;=&amp; \left( 
+  \frac{1}{k_B} + \frac{1}{k_A+k_C} \right) \times \frac{k_A+k_C}{k_A} \\<br />
+&amp;=&amp; \frac{k_A + k_C}{ k_B k_C} + \frac{1}{k_C} \\<br />
+&amp;=&amp; \frac{ k_A + k_B +k_C}{k_B k_C} \\
+<br />
+\end{eqnarray} \)</p>
+<p>となります．</p>
+<p>実際にモンテカルロシュミレーションにて確認してみると，</p>
+<p><img src="Dwell time-06.png" width="461" height="391" /></p>
+<p>k<sub>B</sub>=1, k<sub>C</sub>=1, k<sub>A</sub>=1,のとき一致していることがわかります<br />
+図下の，Theoryが計算値，平均がシミュレーションによる平均値．</p>
+<p><img src="Dwell time-07.png" width="465" height="397" /></p>
+<p>k<sub>B</sub>=2, k<sub>C</sub>=2, k<sub>A</sub>=1,のときにも一致していることがわかります</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Dwell time-07.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Dwell time-07.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

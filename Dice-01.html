@@ -1,0 +1,100 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dice</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+
+	
+
+
+
+<link href="../../../../Documents/HomePage/160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+<title>Laplace</title>
+</head>
+
+
+<body>
+<p class="Large-Bold-RED">サイコロを振って，”６”が出るまでの回数はどのような分布になるか?</p>
+<p>さて，<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Chemical%20reactin-01.html">一分子計測による解析手法</a>，というコーナーになぜ，さいころ?と疑問に思われる方もおられるかと思いますが，結構重要な問題です．</p>
+<p>サイコロを振って，”６”，が出る確率は?という問いはすぐにわかりますね，答えは，１／６，です．<br />
+では，<span class="Red-Bold">サイコロを振って，”６”が出るまで何回サイコロを振るか?その分布は?</span>というのが，今回の問題です．</p>
+<p>まずは，一回で６が出る確率は，<span class="Large-Bold-Red">１／６</span>，です．<br />
+では，２回目で６が出る確率は，<span class="Large-Blue">１／６，ではありません</span>．<br />
+この問いをもっと正確に記述すると，<br />
+　<span class="Red">１回目は６が出なくて，２回目に６が出る確率</span><br />
+なのです．<br />
+ですので，その確率は，</p>
+<p>\( \Large       \displaystyle \left( 1 - \frac{1}{6} \right)   \times \frac{1}{6}\)<br />
+  となるのです．</p>
+<p>つまり，<br />
+　１回目　：　\( \Large      \hspace{ 108pt} \displaystyle \frac{1}{6} \)<br />
+　２回目　：　\( \Large      \hspace{ 12pt} \displaystyle \left( 1 - \frac{1}{6} \right)  \hspace{ 18pt} \times \frac{1}{6}\)<br />
+　３回目　：　　\( \Large      \displaystyle \left( 1 - \frac{1}{6} \right)^2 \hspace{ 14pt} \times \frac{1}{6}\)<br />
+　ｎ回目　：　　\( \Large      \displaystyle \left( 1 - \frac{1}{6} \right)^{n-1} \times \frac{1}{6}\)</p>
+<p>という法則性があります．確率で表すと，</p>
+<p>　\( \Large      \displaystyle P(n) = \left( 1 - \frac{1}{6} \right)^{n-1} \times \frac{1}{6}\)</p>
+<p>となります．このままでは使いづらいので，指数に直すと，</p>
+<p>　\( \Large      \displaystyle ln \ P(n) = ln \left[ \left( \frac{5}{6} \right)^{n-1} \times \frac{1}{6} \right] \)</p>
+<p>　\( \Large      \displaystyle        \hspace{ 49pt} = (n-1) \cdot ln  \left( \frac{5}{6} \right) + ln \frac{1}{6}  \)</p>
+<p>　\( \Large      \displaystyle        \hspace{ 49pt} = n \cdot  ln  \left( \frac{5}{6} \right) - ln  \left( \frac{5}{6} \right)+ ln \frac{1}{6}  \)</p>
+<p>　\( \Large      \displaystyle        \hspace{ 49pt} = n \cdot  ln  \left( \frac{5}{6} \right) + ln \frac{1}{5}  \)</p>
+<p>　\( \Large      \displaystyle        P(n) = \frac{1}{5}  \ EXP \left[ n \cdot  ln  \left( \frac{5}{6} \right) \right] \)</p>
+<p>となります．ln(5/6)はマイナスの値なので，単調減少する指数関数となります．</p>
+<p>このことが何を意味するかというと，<br />
+  <span class="X-Large-RED">　ランダムな現象でも，そのイベントが起こるまでの回数，時間の分布は指数関数となる</span><br />
+と言うことです．</p>
+<p>つまり，さいころを振って６が出る回数は１／６ですが，<span class="Large-Bold-Blue">６が出るまでの回数は６回以下で起こる確率がとても多い</span>．<br />
+と言うことです．<br />
+その代わり，何回サイコロをふっても，６が出ない場合（１００回ふっても，１０００回ふっても）もあり得ます．</p>
+<p><img src="Dice-01.jpg" width="320" height="325" /></p>
+<p>上のグラフは，４４２回のトライアルでの結果です（エクセルで計算しました）．<br />
+計算通り，指数関数となっていることがわかりますね．</p>
+<p>あまりよい例ではないですが，飛行機事故，は一度起こると連鎖して次の事故も起こるように感じます．<br />
+しかし，もし飛行機事故がお互いに関連なく，ランダムに発生するとしても，事故と事故との間隔は上記のように，指数関数となるので短い確率の方が高くなります．<br />
+なので，あたかも連鎖しているように感じ取れるのです（もちろん，気象や人的要因で連鎖する可能性もあります）．<br />
+このあたりは，<a href="http://bylines.news.yahoo.co.jp/ishidamasahiko/20140812-00038198/" target="_blank">このサイト</a>，に詳しく書かれています．</p>
+<p>また，この議論は化学反応においても適用できます．<br />
+<span class="Red-Bold">単純な一次反応</span>を考えてみると，</p>
+<p>\( \Large      \ce{A -&gt;[\ k \ ]  B} \)</p>
+<p>という反応を考えます．<br />
+これは，Aと言う状態からBと言う状態へ速度定数，ｋ，（単位は１/s）で遷移する，というものです．<br />
+もし，ｋ＝１００，とすると，１秒間に１００回，となりますので，１回にかかる時間は１０msとなります．<br />
+しかし，１０msごとに遷移が起こる，というわけではなく，平均１０ms，であることに注意してください．<br />
+この遷移がランダムに起こる，と考えると，上記の計算が適用できます．<br />
+つまり，<br />
+　ある分子Aは１０msよりも早くBに遷移する<br />
+　ある分子Aは１０msよりも遅くBに遷移する<br />
+　１０msよりも早く遷移する割合の方が多い<br /> 
+　しかし，平均は１０msである<br />
+と言うことになるのです．<br />
+詳しくは，<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Reaction-first-01.html">一次反応に対する持続時間の分布について</a>，をご覧ください．</p>
+<p>次に，上の確率密度がきちんと<span class="X-Large-Blue">規格化されているか，平均値はいくらか</span>，を調べてみましょう．</p>
+<p><span class="style7"><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Dice-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

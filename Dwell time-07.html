@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dwell time-07</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">一分子の化学反応論 ー 平衡・逐次反応-01</h1>
+<p>次に，以下のような反応の場合，Aから（Bを経由して）Cに向かう反応の時間を考えていきましょう．</p>
+<p>\(\Large A \underset{k_A}{\overset{k_B}{\rightleftharpoons}} B \overset{k_C}{\rightharpoonup} C\)</p>
+<p>この場合には，もちろん，A→B→C，と言う反応もありますが，B→Aに戻る反応もあるので，可能性は無限にあります．<br />
+そこで，以下のように反応式を書き換えます．</p>
+<p>\(\Large \require{AMScd} \begin{CD} A \overset{k_B}{\rightharpoonup}  B \overset{k_C}{\rightharpoonup} C \\<br />
+@VVk_AV\\A \\<br />
+@VVk_AV\\<br />
+ \hspace{ 30pt } B \overset{k_C}{\rightharpoonup} C  \\<br />
+ @VVk_AV\\A \\<br />
+@VVk_AV\\<br />
+\hspace{ 30pt } B \overset{k_C}{\rightharpoonup} C  \\ <br />
+\vdots \\<br />
+\end{CD}  \) </p>
+<p>まっすぐCまで進むケース，一回Aに戻るケース，二回Aに戻るケース．．．．となりますね．<br />
+それぞれの場合の反応時間，割合を考えていきましょう．</p>
+<p class="Large-Bold-Blue">Case 0　：　A→B→Cへ直接移行する場合</p>
+<p>反応時間は，</p>
+<p>\(\Large t_{A \rightarrow B} = \frac{1}{k_B} \)</p>
+<p>\(\Large t_{B \rightarrow C} = \frac{1}{k_A+k_C} \)</p>
+<p>\(\Large t_0 = t_{A \rightarrow B \rightarrow C} = \frac{1}{k_B} + \frac{1}{k_A+k_C} \)</p>
+<p>この計算は，<a href="Dwell time-06.html">ここ</a>，をご覧ください．</p>
+<p>\(\Large p_0 = p_{A \rightarrow B \rightarrow C} =  \frac{k_C}{k_A+k_C} \)</p>
+<p>この計算は，<a href="Chemical reactin-05.html">ここ</a>，をご覧ください．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue">Case 1　：　A→B→A→B→Cと一回戻る場合</p>
+<p>反応時間は，</p>
+<p>\(\Large t_{A \rightarrow B} = \frac{1}{k_B} \)</p>
+<p>\(\Large t_{B \rightarrow A} = \frac{1}{k_A+k_C} \)</p>
+<p>\(\Large t_{A \rightarrow B} = \frac{1}{k_B} \)</p>
+<p>\(\Large t_{B \rightarrow C} = \frac{1}{k_A+k_C} \)</p>
+<p>\(\Large t_1 = t_{A \rightarrow B \rightarrow A \rightarrow B \rightarrow C}  <br />
+  = \frac{1}{k_B} + \frac{1}{k_A+k_C} +\frac{1}{k_B} + \frac{1}{k_A+k_C} \\<br />
+  \hspace{ 120pt } = 2 \cdot \left( \frac{1}{k_B} + \frac{1}{k_A+k_C} \right) \\<br />
+  \)</p>
+<p>\(\Large p_1 = p_{A \rightarrow B \rightarrow A \rightarrow B \rightarrow C} =  \frac{k_C}{k_A+k_C} \frac{k_A}{k_A+k_C}\)</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue">Case n　：　A→B→(A→B)<sup>n</sup>→Cとn回戻る場合</p>
+<p>\(\Large t_n = (n+1)  \left( \frac{1}{k_B} + \frac{1}{k_A+k_C} \right) \)</p>
+<p>\(\Large p_n =   \frac{k_C}{k_A+k_C} \left( \frac{k_A}{k_A+k_C} \right)^n \)</p>
+<p>となります．従って，n回目の経路（n=0から）での経過時間とその割合の積は，</p>
+<p>\(\Large \begin{eqnarray} P(n)  &amp;=&amp;   (n+1)  \left( \frac{1}{k_B} + \frac{1}{k_A+k_C} \right) \times \frac{k_C}{k_A+k_C} \left( \frac{k_A}{k_A+k_C} \right)^n \\<br />
+  &amp;=&amp; (n+1) t_1 \cdot (1- \alpha)^n \cdot \alpha \\<br />
+\end{eqnarray} \)</p>
+<p>\(\Large \hspace{ 80pt } ( \alpha \equiv \frac{k_A}{k_A+k_C} ) \)</p>
+<p>\(\Large \hspace{ 80pt } ( t_1 \equiv  \frac{1}{k_B} + \frac{1}{k_A+k_C} ) \)</p>
+<p>となります．この値をn=0から∞まで足せばよいのです．</p>
+<p>次ページに，この計算を行っていきましょう．</p>
+<p><span class="style7"><a href="Dwell time-06.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Dwell time-08.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

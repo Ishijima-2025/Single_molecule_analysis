@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>2D-Gaussian</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">2次元ガウシアン画像の理論計算-01</p>
+<p class="Large-Bold-Red">2次元ガウシアンの積分</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p>蛍光顕微鏡で蛍光像の観察を行う際に，重要なポイントは，</p>
+<p class="Large-Bold-Blue">　強度を計算したい</p>
+<p>という局面が頻繁に出てきます．</p>
+<p>その際に，どこまでを積分範囲にするか，という点でいつも悩みます．<br />
+と言うのも，ガウス分布なので，いつまでたっても（無限大になっても）強度は理論上０にならないからです．</p>
+<p>そこで，一般的に使われるのが，<br />
+  <span class="Blue-Bold">　σ，もしくは２σまでの積分</span><br />
+です．</p>
+<p><span class="Red-Bold">一次元の場合</span>は，具体的な計算は，<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/error-02.html">ここ</a>，に記してあるように，<br />
+  <span class="Blue-Bold">　　σ　：　68％<br />
+  　２σ　：　95％</span><br />
+と，２σまでの範囲ならほぼよいと考えてもいいことになります．</p>
+<p>では，二次元の場合はどのように計算すればよいでしょう？</p>
+<p><img src="2D-Gaussian-11.png" width="547" height="527" alt=""/></p>
+<p>この数式は，</p>
+<p>\( \Large  Z= \frac{1}{ \sqrt{2 \ \pi \ \sigma_x^2}} e^{- \frac{(x-x_0)^2}{2 \ \sigma_x^2}} \times \frac{1}{ \sqrt{2 \ \pi \ \sigma_y^2}} e^{- \frac{(y-y_0)^2}{2 \ \sigma_y^2}}\)</p>
+<p>で表すことができます．簡単に，原点を０としてx,yのσを等しいとすれば，</p>
+<p>\( \Large  Z= \frac{1}{ 2 \ \pi \ \sigma^2} e^{- \frac{x^2+y^2}{2 \ \sigma^2}} \)</p>
+<p>となります．</p>
+<p>では，中心からσまでの範囲での積分はどうなるのでしょうか？</p>
+<p>私も勘違いしましたが，</p>
+<p>\( \Large \displaystyle \int_{- \sigma}^{\sigma}  \int_{- \sigma}^{\sigma} \frac{1}{ 2 \ \pi \ \sigma^2} e^{- \frac{x^2+y^2}{2 \ \sigma^2}} dx dy <br /> 
+  = \int_{- \sigma}^{\sigma}
+\frac{1}{ \sqrt{2 \ \pi \ \sigma^2}} e^{- \frac{x^2}{2 \ \sigma^2}} dx \times \int_{- \sigma}^{\sigma}
+\frac{1}{ \sqrt{2 \ \pi \ \sigma^2}} e^{- \frac{y^2}{2 \ \sigma^2}} dy \)</p>
+<p class="Red-Bold">としてはいけません！</p>
+<p>このままだと，<span class="Large-Bold-Blue">正方形のエリア</span>，を積分してしまうことになるからです．</p>
+<p>半径σ内の計算ですので，ｘとｙは独立ではないのです．</p>
+<p>その関係は，半径ｒの場合，</p>
+<p>\( \Large  x^2 + y^2 = r^2 \)</p>
+<p>\( \Large x = \sqrt{r^2 - y^2} \)</p>
+<p>となるので，</p>
+<p>\( \Large \displaystyle \int_{- \sigma}^{\sigma}  \int_{- \sigma}^{\sigma} \frac{1}{ 2 \ \pi \ \sigma^2} e^{- \frac{x^2+y^2}{2 \ \sigma^2}} dx dy <br />
+= \displaystyle \int_{- \sigma}^{\sigma} \int_{- \sqrt{\sigma^2-y^2}}^{\sqrt{\sigma^2-y^2}}   \frac{1}{ 2 \ \pi \ \sigma^2} e^{- \frac{x^2+y^2}{2 \ \sigma^2}} dx dy \)</p>
+<p>となるのが正解です．</p>
+<p>しかし！，この最初の定積分で誤差関数を含む式となり，さらにそれを積分となるはとてもややこしいですね．．．．</p>
+<p>ですので，極座標で計算してみることにします．</p>
+<p>次ページをご覧ください．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="2D-Gaussian-12.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

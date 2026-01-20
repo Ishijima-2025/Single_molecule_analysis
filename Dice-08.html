@@ -1,0 +1,90 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dice</title>
+<link href="250219.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+	
+
+
+
+<link href="../../../../Documents/HomePage/160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+<title>Laplace</title>
+</head>
+
+<body>
+<p class="Red-Large-Bold">N個の目が出るサイコロを振って，”N”が出るまでの回数はどのような分布になるか?</p>
+<p>次は<span class="Blue-Bold">分散</span>です．</p>
+<p class="Large-Bold-RED">&nbsp;</p>
+<p>分散値を求めるには，なかなかややこしい計算ですが，<a href="https://shoichimidorikawa.github.io/Lec/prob_stat/ProbMain.pdf" target="_blank">こちらのサイト</a>，を参考にしました，ありがとうございます．</p>
+<p>いままでの計算をまとめると，</p>
+<p>　\( \Large      \displaystyle                     P(n)  = C \cdot e^{an}\)</p>
+<p>　\( \Large      \displaystyle                      a \equiv ln \left( \frac{N-1}{N} \right)  &lt; 0\)</p>
+<p>　\( \Large      \displaystyle                      C \equiv  \frac{1}{N-1}  \)</p>
+<p>とすると，</p>
+<p><span class="Blue-Bold">規格化</span>を，</p>
+<p>　\( \Large      \displaystyle        S_0 \equiv \sum_{n=1}^{\infty} P(n) = 1\)</p>
+<p><span class="Blue-Bold">平均値</span>を，</p>
+<p>　\( \Large      \displaystyle        S_1 \equiv \sum_{n=1}^{\infty} n P(n) = N \)</p>
+<p><span class="Blue-Bold">二乗平均値</span>を，</p>
+<p>　\( \Large      \displaystyle        S_2 \equiv \sum_{n=1}^{\infty} n^2 P(n) \)</p>
+<p>とした場合に，<span class="Blue-Bold">分散値</span>は，</p>
+<p>　\( \Large      \displaystyle        Var = S_2 - S_1^2 \)</p>
+<p>となる値を求めたいのです．</p>
+<p>&nbsp;</p>
+<p>まずは，S<sub>2</sub></p>
+<p>　\( \Large      \displaystyle S_2 =      C \sum_{n=1}^{\infty} n^2 e^{an} <br>
+= C \left[ e^a + 4 e^{2a} + 9 e^{3a} +.... \right] \)</p>
+<p>\( \Large      \displaystyle        e^{a}  \)　を掛けると，</p>
+<p>　\( \Large      \displaystyle e^{a} S_2 <br>
+\hspace{77pt} = C \left[  \hspace{36pt} e^{2a} + 4 e^{3a} + 9 e^{4a} +.... \right] \)</p>
+<p>その差分は，</p>
+<p>　\( \Large      \displaystyle (1 - e^a) S_2 <br>
+\hspace{40pt} = C \left[ e^a + 3 e^{2a} + 5 e^{3a} +.... \right] \)</p>
+<p>となります．</p>
+<p>また，</p>
+<p>　\( \Large      \displaystyle S_0 =      C \sum_{n=1}^{\infty}  e^{an} <br>
+= C \left[ e^a +  e^{2a} +  e^{3a} +.... \right] \)</p>
+<p>　\( \Large      \displaystyle 2 S_1 =      2 \cdot C \sum_{n=1}^{\infty}n  e^{an} <br>
+= C \left[ 2 e^a +  4 e^{2a} +  6 e^{3a} +.... \right] \)</p>
+<p>その差分は，</p>
+<p>　\( \Large      \displaystyle 2 S_1 - S_0 <br>
+= C \left[  e^a +  3 e^{2a} +  5 e^{3a} +.... \right] \)</p>
+<p>と，　\( \Large      \displaystyle (1 - e^a) S_2\)，と等しくなります．したがって，</p>
+<p>\( \Large      \displaystyle (1 - e^a) S_2 = 2 S_1 - S_0\)</p>
+<p>\( \Large      \displaystyle  S_2 = \frac{2 S_1 - S_0}{1 - e^a}<br>
+  = \frac{2N - 1}{ 1- (N-1)/N}= \frac{2N - 1}{ N/N- (N-1)/N}  = \frac{2N - 1}{ 1/N}=
+(2N-1) \ N \)</p>
+<p>\( \Large      \displaystyle        Var = S_2 - S_1^2 = (2N-1) \ N- N^2 =2N^2-N-N^2 = N^2 -N =N (N-1)\)</p>
+<p>となります．</p>
+<p>N=6，の場合には，30，となり，<a href="Dice-04.html">サイコロの場合</a>と一致します．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style10"><a href="Dice-07.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+</body>
+</html>

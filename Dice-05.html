@@ -1,0 +1,74 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dice</title>
+<link href="250219.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+
+	
+
+
+
+<link href="../../../../Documents/HomePage/160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+<title>Laplace</title>
+</head>
+
+<body>
+<p class="Red-Large-Bold">N個の目が出るサイコロを振って，”N”が出るまでの回数はどのような分布になるか?</p>
+<p><span class="Blue">Nの目があるサイコロを振って”N”が出るまでの確率</span>を考えます．</p>
+<p> 1回目，2回目，3回目，ｎ回目でNが初めて出る確率を求めて見ましょう．</p>
+<p class="Blue-Bold">・1回目</p>
+<p>　\( \Large      \displaystyle          P(1)   =\frac{1}{N}\)</p>
+<p class="Blue-Bold">・2回目</p>
+<p>　\( \Large      \displaystyle          P(2)   = \left(1 - \frac{1}{N} \right) \times \frac{1}{N}\)</p>
+<p class="Blue-Bold">・3回目</p>
+<p>　\( \Large      \displaystyle          P(3)   = \left(1 - \frac{1}{N} \right)^2 \times \frac{1}{N}\)</p>
+<p class="Blue-Bold">・n回目</p>
+<p>　\( \Large      \displaystyle          P(N)   = \left(1 - \frac{1}{N} \right)^{n-1} \times \frac{1}{N}\)</p>
+<p>これを指数分布であることを導き出しましょう．</p>
+<p>両辺の対数を取ると，</p>
+<p>　\( \Large      \displaystyle          ln P(n)   = ln \left[ \left(1 - \frac{1}{N} \right)^{n-1} \times \frac{1}{N} \right]\)</p>
+<p>　\( \Large      \displaystyle          = (n-1) \cdot ln \left( \frac{N-1}{N} \right)+ ln \frac{1}{N} \)</p>
+<p>　\( \Large      \displaystyle          = n \cdot ln \left( \frac{N-1}{N} \right) - ln \left( \frac{N-1}{N} \right)+ ln \frac{1}{N} \)</p>
+<p>　\( \Large      \displaystyle          = n \cdot ln \left( \frac{N-1}{N} \right) + ln \frac{1}{N-1} \)</p>
+<p>　\( \Large      \displaystyle                    ln \left[ (N-1) P(n) \right] = n \cdot ln \left( \frac{N-1}{N} \right) \)</p>
+<p>　\( \Large      \displaystyle                     (N-1) P(n)  = Exp \left[ n \cdot ln \left( \frac{N-1}{N} \right) \right]\)</p>
+<p>　\( \Large      \displaystyle                     P(N)  = \frac{1}{N-1} Exp \left[ n \cdot ln \left( \frac{N-1}{N} \right) \right]\)</p>
+<p>&nbsp;</p>
+<p>　\( \Large      \displaystyle                      ln \left( \frac{N-1}{N} \right) &lt; 0 \)</p>
+<p>となりますので，単調減少する指数関数で表すことができます．</p>
+<p>　\( \Large      \displaystyle                      a \equiv ln \left( \frac{N-1}{N} \right)  &lt; 0\)</p>
+<p>　\( \Large      \displaystyle                      C \equiv  \frac{1}{N-1}  \)</p>
+<p>とすれば，</p>
+<p>　\( \Large      \displaystyle                     P(n)  = C \cdot e^{an}\)</p>
+<p>となります．</p>
+<p>次は，<span class="Blue-Bold">規格化</span>，です．</p>
+<p>&nbsp;</p>
+<p><span class="style10"><a href="Dice-04.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Dice-06.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+</body>
+</html>

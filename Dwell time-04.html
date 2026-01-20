@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dwell time-04</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">一分子の化学反応論 ー 競争反応-01</h1>
+<p>競争反応においては，</p>
+<pre>&nbsp;</pre>
+<p>\(\Large \require{AMScd} \begin{CD} B @&gt;&gt;k_A&gt; A \\<br />
+@VVk_CV\\C \end{CD}  \) </p>
+<p>という反応を考えていきましょう．</p>
+<p><a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Chemical%20reactin-07.html">ここ</a>，で示したように，Bは二つの反応経路があるので，</p>
+<p>\(\Large k_A + k_B \)</p>
+<p>で反応が進みます．つまり，<br />
+　k<sub>A</sub> = 1 (1/s), k<sub>B</sub> = 1 (1/s)<br />
+の場合，Bはk<sub>A</sub>+K<sub>B</sub>の速度で減少することになるのです．<span class="Blue-Bold">上記の反応速度では0.5秒</span>となります．</p>
+<p>では，A, Cはどうでしょう？<br />
+上記のようにそれぞれ，<br />
+　k<sub>A</sub> = 1 (1/s), k<sub>B</sub> = 1 (1/s)<br />
+ですので，A，Cへ行く平均反応時間はそれぞれ1秒となります．<br />
+となると，<span class="Blue-Bold">すべての反応の平均時間は1秒</span>となります．<br />
+しかし，上記のように，Bは0.5秒なのでおかしいですね．．．</p>
+<p>モンテカルロシュミレーションにて確認してみましょう．<br />
+</p>
+<p><img src="Dwell time-03.png" width="633" height="389" /></p>
+<p>結果はなんと，それぞれの反応にかかる時間が0.5秒となっています（図の下の”平均”を確認ください）．<br />
+　k<sub>A</sub> = 1 (1/s), k<sub>B</sub> = 1 (1/s)<br />
+にも関わらず．．．．</p>
+<p>次ページにに，この問題を考えていきましょう．</p>
+<p><span class="style7"><a href="Dwell time-03.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Dwell time-05.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

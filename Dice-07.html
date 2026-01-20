@@ -1,0 +1,60 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dice</title>
+<link href="250219.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+
+	
+
+
+
+<link href="../../../../Documents/HomePage/160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+<title>Laplace</title>
+</head>
+
+<body>
+<p class="Red-Large-Bold">N個の目が出るサイコロを振って，”N”が出るまでの回数はどのような分布になるか?</p>
+<p>次は<span class="Blue-Bold">平均</span>です．</p>
+<p>　\( \Large      \displaystyle                     P(n)  = C \cdot e^{an}\)</p>
+<p>　\( \Large      \displaystyle                      a \equiv ln \left( \frac{N-1}{N} \right)  &lt; 0\)</p>
+<p>　\( \Large      \displaystyle                      C \equiv  \frac{1}{N-1}  \)</p>
+<p>とすると，</p>
+<p>　\( \Large      \displaystyle                     &lt;P&gt; = \sum_{n=1}^{\infty} n P(n)  = C \left[  e^{a} +2 e^{2a} +   3e^{3a} + ... \right]\)</p>
+<p>となります．　</p>
+<p>\( \Large      \displaystyle                       e^{a} \)，を掛けると，</p>
+<p>　\( \Large      \displaystyle                     e^{a} \cdot \sum_{n=1}^{\infty} n P(n)  = C \left[  e^{2a} +   2 e^{3a} +   3 e^{4a} + ... \right]\)</p>
+<p>　\( \Large      \displaystyle                     \sum_{n=1}^{\infty} n P(n)  - e^{a} \cdot \sum_{n=1}^{\infty} n P(n)  = &lt;P&gt; - e^a &lt;P&gt; = C \left[  e^{a} + e^{2a} +   e^{3a} + ... \right]\)</p>
+<p>右辺は，規格化の式より，１となるので，</p>
+<p>　\( \Large      \displaystyle                     &lt;P&gt; = \frac{1}{ 1 - e^a} = \frac{1}{ 1 - (N-1)/N } = \frac{1}{ N/N - (N-1)/N }= \frac{1}{ 1/N} = N \)</p>
+<p>となり，<span class="Red-Large">平均は，N</span>，となります．</p>
+<p>次は<span class="Blue-Bold">分散</span>です．</p>
+<p>&nbsp;</p>
+<p><span class="style10"><a href="Dice-06.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Dice-08.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+</body>
+</html>

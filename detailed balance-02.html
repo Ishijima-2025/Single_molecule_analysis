@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>detailed balance-02</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-RED">詳細釣り合い (  detailed balance  )について-02</p>
+<p class="Blue"><strong>注）　ここでの説明は詳細釣り合いの定義とはことなる可能性がありますので注意してください</strong></p>
+<p>次に，逆反応がある場合の反応サイクルについて考えていきましょう．<br />
+反応サイクルは，以下のようになります．</p>
+<p><img src="Detailed Balance-02.png" width="346" height="360" /></p>
+<h1 class="style1">&nbsp;</h1>
+<p>この場合の正味の反応サイクルの速度は，K{M/s]，で表すことにしましょう．<br />
+各状態の濃度変化は，定常状態においては，</p>
+<p>\(\Large \frac{dA}{dt} = -(k_B + k_{-A}) \cdot A \hspace{ 42pt } + k_{-B} \cdot B \hspace{ 55pt } + k_A \cdot C =0 \)</p>
+<p>\(\Large \frac{dB}{dt} = \hspace{ 65pt } k_{B} \cdot A -(k_C + k_{-B)} \cdot B \hspace{ 45pt } +   k_{-C} \cdot C = 0\)</p>
+<p>\(\Large \frac{dC}{dt} = \hspace{ 58pt } k_{-A} \cdot A \hspace{ 50pt } +  k_C \cdot B - (k_A +k_{-C}) \cdot C =0 \)</p>
+<p>となります（濃度一定のため）．また，全体の濃度は一定として，</p>
+<p>\(\Large A +B +C = A_0 \)</p>
+<p>とします．さあこれを解けばいいのですが．．．．まあ大変．．．ここは，Mathematicaに登場していただいて解くと,</p>
+<p>プログラムは,</p>
+<p>Solve[(kB + kmA)*A == kmB*B + kA*C &amp;&amp; (kC + kmB)*B == 
+kmC*C + kB*A &amp;&amp; (kA + kmC)*C == kmA*A + kC*B &amp;&amp; A + B + C == A0, {A, B, C}]</p>
+<p>&nbsp;</p>
+<p>\(\Large A = \frac{A_0 \cdot ( k_A k_C + k_A k_{-B} + k_{-B} k_{-C})}{ k_A k_B + k_A k_C + k_B k_C + k_C k_{-A} + k_A k_{-B} + k_B k_{-C} + k_{-A} k_{-B}  + k_{-A} k_{-C} + k_{-B} k_{-C}} \)</p>
+<p>\(\Large B = \frac{A_0 \cdot ( k_A k_B + k_B k_{-C} + k_{-A} k_{-C})}{ k_A k_B + k_A k_C + k_B k_C + k_C k_{-A} + k_A k_{-B} + k_B k_{-C} + k_{-A} k_{-B}  + k_{-A} k_{-C} + k_{-B} k_{-C}} \)</p>
+<p>\(\Large C = \frac{A_0 \cdot ( k_B k_C + k_C k_{-A} + k_{-A} k_{-B})}{ k_A k_B + k_A k_C + k_B k_C + k_C k_{-A} + k_A k_{-B} + k_B k_{-C} + k_{-A} k_{-B}  + k_{-A} k_{-C} + k_{-B} k_{-C}} \)</p>
+<p>と解くことができます．</p>
+<p>また定常状態なので，各遷移の速度は等しくなり，</p>
+<p>\(\Large k_B \cdot A - k_{-B} \cdot B = k_C \cdot B - k_{-C} \cdot C = k_A \cdot C - k_{-A} \cdot A = K 
+\)</p>
+<p>となります．ここで，最初の項だけ計算すると（分母は省略して），</p>
+<p>\(\Large \begin{eqnarray} K_{numerator} &amp;=&amp; A_0 \cdot \left[ k_B \times ( k_A k_C + k_A k_{-B} + k_{-B} k_{-C}) - k_{-B} \times  ( k_A k_B + k_B k_{-C} + k_{-A} k_{-C}) \right] \\<br />
+  &amp;=&amp; 
+A_0 \cdot \left[ k_A k_B k_C -  k_{-A} k_{-B} k_{-C} \right] \\<br />
+\end{eqnarray} \)</p>
+<p>となります．</p>
+<p>従って，</p>
+<p>\(\Large K = \frac{A_0 \cdot ( k_A k_B k_C -  k_{-A} k_{-B} k_{-C} )}{ k_A k_B + k_A k_C + k_B k_C + k_C k_{-A} + k_A k_{-B} + k_B k_{-C} + k_{-A} k_{-B}  + k_{-A} k_{-C} + k_{-B} k_{-C}} \)</p>
+<p>と簡単になります． 1分子の追跡の場合，A<sub>0</sub>=1，として考えればよいのです．</p>
+<p>実際にモンテカルロシュミレーションにて確認してみると，</p>
+<p><img src="Detailed Balance-03.png" width="637" height="176" /></p>
+<p>となり，計算（time for 1 cycle by simulation (s)）と理論（time for 1 cycle by theory (s)）が一致することがわかります．<br />
+この計算は，右回転・左回転に遷移する回数を計り，その差からサイクル数を見積もりました．</p>
+<p>&nbsp;</p>
+<p><span class="style10"><a href="detailed balance-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+</body>
+</html>

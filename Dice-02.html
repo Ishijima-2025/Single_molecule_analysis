@@ -1,0 +1,77 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Yuhai Tu</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+
+	
+
+
+
+<link href="../../../../Documents/HomePage/160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+<title>Laplace</title>
+</head>
+
+<body>
+<p class="Large-Bold-RED">きちんと規格化されているか，平均値はいくらか </p>
+<p class="X-Large-Blue">きちんと規格化されているか?</p>
+<p>規格化されているかは，</p>
+<p>　\( \Large      \displaystyle        P(n) = \frac{1}{5}  \ EXP \left[ n \cdot  ln  \left( \frac{5}{6} \right) \right] \)</p>
+<p>の計算で，ｎを１から無限大まで足し合わせて，１，になればいいのですから，</p>
+<p>　\( \Large      \displaystyle        \sum_{n=1}^{\infty} P(n) = \frac{1}{5}  \sum_{n=1}^{\infty}\ EXP \left[ n \cdot  ln  \left( \frac{5}{6} \right) \right] \)</p>
+<p>を計算することになります．</p>
+<p>まずは簡単に，</p>
+<p>　\( \Large      \displaystyle        f = \sum_{n=1}^{\infty} e^{an} = e^a + e^{2a} + e^{3a} +... \)</p>
+<p>を考えましょう．<br />
+両辺に，e<sup>a</sup>，を掛けると，</p>
+<p>　\( \Large      \displaystyle        f =  e^a + e^{2a} + e^{3a} +... \)</p>
+<p>　\( \Large      \displaystyle        e^a \cdot f =  e^{2a} + e^{3a} + e^{4a} +... \)</p>
+<p>上の二式の差分を取ると，</p>
+<p>　\( \Large      \displaystyle        f -  e^a \cdot f =  e^{a}  \)</p>
+<p>　\( \Large      \displaystyle        f = \sum_{n=1}^{\infty} e^{an} = \frac{e^a}{1 - e^a} \)</p>
+<p>と計算できます．</p>
+<p>ここで，</p>
+<p>　\( \Large      \displaystyle        a =   ln  \left( \frac{5}{6} \right)  \)</p>
+<p>　\( \Large      \displaystyle          e^a   =\frac{5}{6}\)</p>
+<p>とすると，</p>
+<p>　\( \Large      \displaystyle        \sum_{n=1}^{\infty} P(n) = \frac{1}{5}  \sum_{n=1}^{\infty}\ EXP \left[ n \cdot  ln  \left( \frac{5}{6} \right) \right] <br>
+  =
+\frac{1}{5}  \sum_{n=1}^{\infty}\ e^{an}<br>
+=
+\frac{1}{5}  f <br>
+=
+\frac{1}{5}  \frac{e^a}{1 - e^a} \)</p>
+<p>したがって，</p>
+<p>　\( \Large      \displaystyle          \frac{1}{5} \times \frac{5/6}{1-5/6} = <br>
+\frac{1}{5} \times \frac{5/6}{1/6} = 1\)</p>
+<p>となり，きちんと規格化できていることがわかります．</p>
+<p>次は<span class="Large-Blue">平均</span>です．</p>
+<p><span class="style7"><a href="Dice-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Dice-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

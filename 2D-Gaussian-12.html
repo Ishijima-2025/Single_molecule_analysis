@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>2D-Gaussian</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">2次元ガウシアン画像の理論計算-02</p>
+<p class="Large-Bold-Red">2次元ガウシアンの積分</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p>極座標変換するので，</p>
+<p>\( \Large  x^2 + y^2 = r^2 \)</p>
+<p>\( \Large  x = r \ cos \theta \)</p>
+<p>\( \Large  y = r \ sin \theta \)</p>
+<p>\( \Large  Z= \frac{1}{ 2 \ \pi \ \sigma^2} e^{- \frac{y^2}{2 \ \sigma^2}} \)</p>
+<p>となります．</p>
+<p>nσまで積分するとした場合，積分範囲は，θに関しては，０～２π，ｒに関しては，０からnσ，となります．</p>
+<p>さらに<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/Polar.html">変数変換</a>を行い，</p>
+<p>\( \Large \displaystyle \int_{0}^{2 \pi}  \int_{0}^{n \sigma} \frac{1}{ 2 \ \pi \ \sigma^2} e^{- \frac{r^2}{2 \ \sigma^2}} r dr d \theta \)</p>
+<p>を計算します．ｒが入っていることに注意してください．</p>
+<p>θに関しては，単純に，２π，となりますので，</p>
+<p>\( \Large   \frac{1}{ \sigma^2} \displaystyle \int_{0}^{n \sigma}  e^{- \frac{r^2}{2 \ \sigma^2}} r dr  \)</p>
+<p>となります．この計算は，<a href="https://mathwords.net/yxex2jou" target="_blank">ここ</a>，を参考にさせていただいて，</p>
+<p>\( \Large   - \frac{r^2}{2 \ \sigma^2} = t \)</p>
+<p>\( \Large \frac{dt}{dr} = - \frac{r}{\sigma^2} \)</p>
+<p>積分範囲は，</p>
+<p>\( \Large 0 \ &lt; \ r \ &lt; \ n \sigma \)</p>
+<p>\( \Large 0 \ &lt; \ t \ &lt; - \frac{ n^2}{2} \)</p>
+<p>となるので，</p>
+<p>\( \Large   \frac{1}{ \sigma^2} \displaystyle \int_{0}^{- \frac{ n^2}{2}}  - \frac{\sigma^2}{r} e^{t} r dt  \)</p>
+<p>\( \Large   = - \displaystyle \int_{0}^{- \frac{ n^2}{2}}   e^{t} dt  \)</p>
+<p>と簡単になります．この積分は簡単で，</p>
+<p>\( \Large   = - \left[ e^{t} \right]_{0}^{- \frac{ n^2}{2}} \)</p>
+<p>\( \Large   = 1 -  e^{- \frac{ n^2}{2}} \)</p>
+<p>となります．</p>
+<p class="Blue-Bold">n=1</p>
+<p>\( \Large   = 1 -  e^{- \frac{ 1}{2}} = 1-\frac{1}{\sqrt{e}}  \fallingdotseq 0.393 \)</p>
+<p class="Blue-Bold">n=2</p>
+<p>\( \Large   = 1 -  e^{- 2} = 1-\frac{1}{e^2} \fallingdotseq 0.865 \)</p>
+<p>と算出することができました．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="2D-Gaussian-11.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

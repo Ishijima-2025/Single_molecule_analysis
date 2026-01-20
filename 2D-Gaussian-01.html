@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>successive_reaction</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">2次元ガウシアン画像のフィッティング方法-01</p>
+<p class="Large-Bold-Red">2次元ガウシアン画像</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p>蛍光顕微鏡で蛍光像の観察を行う際に，</p>
+<p class="Large-Bold-Blue">　蛍光スポットの位置，広がり方，強度などを解析したい</p>
+<p>という局面が頻繁に出てきます．</p>
+<p><img src="2D-Gaussian-01.png" width="402" height="360" alt=""/> <img src="2D-Gaussian-02.png" width="398" height="356" alt=""/></p>
+<p> 　　　　　　　　　　　　　　　　　　　　Labviewで再現した蛍光スポット</p>
+<p>どのような方法が一番よいのでしょう？</p>
+<p>2次元ガウシアンの計算式としては，</p>
+<p>\( \Large  z= A_0 \times Exp \left( - \frac{x-x_0}{2 \sigma_x^2} \right) Exp \left( - \frac{y-y_0}{2 \sigma_y^2} \right) + Base \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>考えられる方法としては，</p>
+<p class="Large-Bold-Blue">　重心位置を求める</p>
+<p>という方法ですが，</p>
+<p>\( \Large  &lt;i&gt;= \displaystyle \sum_{j=1}^{N} \sum_{i=1}^{N} \frac{i \times x_i}{x_i} \)</p>
+<p>\( \Large  &lt;j&gt;= \displaystyle \sum_{i=1}^{N} \sum_{j=1}^{N} \frac{j \times y_j}{y_j} \)</p>
+<p>たしかにこれで重心位置は求まりますが，輝点の大きさ，強度などの見積もりは難しいです．</p>
+<p>さらに，背景光（上の式の，&quot;Base&quot;）があると，重心位置は輝度中心からずれていきます．</p>
+<p>&nbsp;</p>
+<p>ほかにも<span class="Large-Bold-Blue">シンプレックス法</span>などの推定方法もありますが，必要なパラメータが6つもあるので，なかなかプログラムを作成するのが大変です．</p>
+<p>&nbsp;</p>
+<p>さて，ここでは，現在，石島研で使われているフィッティング方法と新しく考えてみたフィッティング方法を説明し，その違いと精度に関して検証していきたいと思います．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="2D-Gaussian-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dwell time-03</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">一分子の化学反応論 ー 逐次反応</h1>
+<p>逐次反応においては，</p>
+<p>\(\Large \require{AMScd}  \begin{CD} A @&gt;{k_B} &gt;&gt; B  @&gt;{k_C} &gt;&gt; C \end{CD} \)</p>
+<p>となります．</p>
+<p>これも，一次反応と同様にそれぞれの反応にかかる時間の和となるだけなので，</p>
+<p>\(\Large t_{A \rightarrow C} = \frac{1}{k_B} + \frac{1}{k_C} \)</p>
+<p>となります．</p>
+<p>モンテカルロシュミレーションにて確認してみましょう．<br />
+解析的なとき方は，<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Chemical%20reactin-17.html">ここ</a>，をご覧ください．</p>
+<p><img src="Dwell time-02.png" width="415" height="330" /></p>
+<p>結果はこの通り，<br />
+　k<sub>B</sub> = 1 (1/s), k<sub>C</sub> = 1 (1/s)<br />
+のとき，指数関数の差の分布となり，平均は2秒となります．</p>
+<p>次に，<span class="Large-Bold-Blue">競争反応</span>について考えていきましょう．</p>
+<p><span class="style7"><a href="Dwell time-02.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Dwell time-04.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

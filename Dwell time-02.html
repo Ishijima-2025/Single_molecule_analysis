@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dwell time-02</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">一分子の化学反応論 ー 一次反応</h1>
+<p>一次反応においては，</p>
+<p>\(\Large \require{AMScd}  \begin{CD} A @&gt;{k_B} &gt;&gt; B \end{CD} \)</p>
+<p>となります．</p>
+<p>速度定数，kB，の次元は，1/s，なので，<br />
+  <span class="Blue-Bold">　1秒間に何回反応が進むか？</span><br />
+となります．従って，1分子において反応が進む時間は，</p>
+<p>\(\Large t_{A \rightarrow B} = \frac{1}{k_B} \)</p>
+<p>となります．</p>
+<p>モンテカルロシュミレーションにて確認してみましょう．<br />
+ある時間，dt，の間に反応が進む割合は，</p>
+<p>\(\Large P(dt) = k_B \times dt \)</p>
+<p>となるので，0～1がでる乱数を与えて，P(dt)の場合に反応が進むとすればいいわけです．<br />
+解析的なとき方は，<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Reaction-first-01.html">ここ</a>，をご覧ください．</p>
+<p><img src="Dwell time-01.png" width="423" height="320" /></p>
+<p>結果はこの通り，<br />
+　k<sub>B</sub> = 1 (1/s)<br />
+のとき，指数関数分布となり，平均は1秒となります．</p>
+<p>次に，<span class="Large-Bold-Blue">逐次反応</span>について考えていきましょう．</p>
+<p><span class="style7"><a href="Dwell time-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Dwell time-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

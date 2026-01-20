@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>detailed balance-01</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-RED">詳細釣り合い (  detailed balance  )について-01</p>
+<p class="Blue"><strong>注）　ここでの説明は詳細釣り合いの定義とはことなる可能性がありますので注意してください</strong></p>
+<p>さて，詳細釣り合いについて考えていきましょう．<br />
+  詳細釣り合いの定義は，<a href="http://ja.wikipedia.org/wiki/%E8%A9%B3%E7%B4%B0%E9%87%A3%E3%82%8A%E5%90%88%E3%81%84" target="_blank">ここ</a>，にあるように，<br />
+  <span class="Large-Bold-RED">熱平衡にある場合，ある過程とその逆の過程の怒る頻度は等しい</span><br />
+  といわれているもののようです．．．．つまり，</p>
+<p>\(\Large A \underset{k_-}{\overset{k_+}{\rightleftharpoons}} B \)</p>
+<p>という二状態の平衡において，A→Bの頻度とB→A，の頻度は等しいこととなります．</p>
+<p>さて，三状態において，A→B→C→A→．．．というように，各状態を遷移していく場合を考えてみましょう．<br />
+  この状態で，各状態の濃度は変化しない場合を考えます．これを平衡状態というかは微妙です．．．．定常状態？</p>
+<h1 class="style1"><img src="Detailed Balance-01.png" width="346" height="360" /></h1>
+<p>この場合の正味の反応サイクルの速度は，K{M/s]，で表すことにしましょう．<br />
+各状態の濃度変化は，</p>
+<p>\(\Large \frac{dA}{dt} = -k_B \cdot A + k_A \cdot C \)</p>
+<p>\(\Large \frac{dB}{dt} = -k_C \cdot B + k_B \cdot A \)</p>
+<p>\(\Large \frac{dC}{dt} = -k_A \cdot C + k_C \cdot B \)</p>
+<p>となり，定常状態なので，濃度変化は０となります，つまり入ってくる量と出ていく量とが等しくなります．<br />
+また，各遷移過程の速度が等しくないといけなく，それが反応サイクルの速度となるので，</p>
+<p>\(\Large k_B \cdot A = k_C \cdot B = k_A \cdot C = K \)</p>
+<p>となります．<br />
+また，この定常状態において，各状態の濃度は，</p>
+<p>\(\Large A = \frac{K}{k_B} \)</p>
+<p>\(\Large B = \frac{K}{k_C} \)</p>
+<p>\(\Large C = \frac{K}{k_A} \)</p>
+<p>となります．定常状態においても各状態の濃度は等しいわけではなく，速度定数に依存することになります．<br />
+つまり，濃度が低くても次の状態への速度定数が低ければいいわけですね．</p>
+<p>このように<span class="Large-Bold-Blue">サイクル，ものの流れを考えることが，詳細釣り合いの定義に含まれるかは．．．．わかりません．．．．</span><br />
+  ただ，ATPaseサイクルなどを考える上で，重要な考察となります．</p>
+<p>では，逆反応がある場合を検討しましょう．</p>
+<p><span class="style10"><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="detailed balance-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>
