@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Drag coefficient-03</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">微小物体の粘性抵抗係数-06</h1>
+
+<p class="Large-Bold-Red">回転楕円体（Ellipsoid）のPerrinの式を，<span class="X-Large-Bold-RED">p=a/b</span>，に置き換えると，どうなるか</p>
+<p>&nbsp;</p>
+<p>a : 長軸半径 </p>
+<p>b : 短軸半径 </p>
+<p>でしたが，その比</p>
+<p class="Large-Bold-Red">p = a/b，または，a = pb</p>
+<p>としたらどのような計算式となるのでしょう</p>
+<p>　</p>
+<p class="Large-Bold-Red">・S</p>
+<p>\(\Large S = \frac{2}{\sqrt{a^2 - b^2}} \ ln \left( \frac{a + \sqrt{a^2 - b^2}}{b}\right) \)</p>
+<p> \(\Large \hspace{20pt} =  \frac{2}{\sqrt{p^2b^2 - b^2}} \ ln \left( \frac{pb + \sqrt{p^2b^2 - b^2}}{b}\right) \)</p>
+<p> \(\Large \hspace{20pt} =  \frac{2}{b \sqrt{p^2 - 1}} \ ln ( p + \sqrt{p^2 - 1}) \)</p>
+<p> \(\Large \hspace{20pt} =  \frac{2p}{a \sqrt{p^2 - 1}} \ ln ( p + \sqrt{p^2 - 1}) \)</p>
+<p> \(\Large \hspace{20pt} =  \frac{2p}{a \sqrt{1- (1/p)^2 }} \ ln ( p + \sqrt{p^2 - 1}) \)</p>
+<p>ここで，新しい関数，G(p)，を定義して，</p>
+<p> \(\Large G(p) \equiv \frac{1}{ \sqrt{p^2 - 1}} \ ln ( p + \sqrt{p^2 - 1}) \)</p>
+<p>\(\Large \displaystyle S = \frac{2}{a} p \ G(p) \)</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・並進</p>
+<p>\(\Large f_{||} = 16  \pi  \eta \frac{a^2 - b^2}{(2a^2 - b^2)S - 2a} \)</p>
+<p> \(\Large \hspace{20pt} = 16  \pi  \eta \frac{p^2b^2 - b^2}{(2p^2b^2 - b^2)\frac{2}{a} \ p G(p) - 2pb} \)</p>
+<p> \(\Large \hspace{20pt} = 16  \pi  \eta \frac{b^2 (p^2 - 1)}{b^2(2p^2 - 1)\frac{2}{a} \ p G(p) - 2pb} \)</p>
+<p> \(\Large \hspace{20pt} = 8  \pi  \eta \frac{b (p^2 - 1)}{(2p^2 - 1) \  G(p) - p} \)</p>
+<p> \(\Large \hspace{20pt} =  \frac{8  \pi  \eta b }{\frac{2p^2 - 1}{p^2 - 1} \  G(p) - \frac{p}{p^2 - 1}} \)</p>
+<p> \(\Large f_{\bot} = 32  \pi  \eta \frac{a^2 - b^2}{(2a^2 - 3b^2)S + 2a} \)</p>
+<p> \(\Large \hspace{20pt} = \frac{16  \pi  \eta b }{\frac{2p^2 - 3}{p^2 - 1} \  G(p) + \frac{p}{p^2 - 1}} \)</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・回転</p>
+<p>\(\Large C_{1} = \frac{32  \pi}{3}  \eta \frac{(a^2 - b^2) b^2}{2a - b^2 S} \)</p>
+<p> \(\Large \hspace{20pt} = \frac{32  \pi}{3}  \eta \frac{(p^2b^2 - b^2) b^2}{2pb - b^2 \frac{2}{a} p \ G(p)} \)</p>
+<p> \(\Large \hspace{20pt} = \frac{16  \pi}{3}  \eta \frac{(p^2 - 1) b^4}{pb - \frac{b}{p} p \ G(p)} \)</p>
+<p> \(\Large \hspace{20pt} = \frac{16  \pi}{3}  \eta \frac{(p^2 - 1) b^3}{p -  G(p)} \)</p>
+<p> \(\Large C_{2} = C_{3} = \frac{32  \pi}{3}  \eta \frac{a^4 - b^4}{(2a^2 - b^2 )S - 2a} \)</p>
+<p> \(\Large \hspace{20pt} = \frac{32  \pi}{3}  \eta \frac{p^4 b^4 - b^4}{(2p^2b^2 - b^2 ) \frac{2}{a} p \ G(p) - 2pb} \)</p>
+<p> \(\Large \hspace{20pt} = \frac{32  \pi}{3}  \eta \frac{(p^4-1) b^4 }{b^2(2p^2 - 1 ) \frac{2}{a} p \ G(p) - 2pb} \)</p>
+<p> \(\Large \hspace{20pt} = \frac{16  \pi}{3}  \eta \frac{(p^4-1) b^3 }{(2p^2 - 1 ) \  G(p) - p} \)</p>
+<p>&nbsp;</p>
+<p>簡単になった気もしますが．．．．．あまり変わらない気も．．．．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>次は，<span class="Large-Bold-Red">ロッドと楕円体との違い</span>，を考えていきましょう</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-05.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/L-arrow.png" alt="l" width="57" height="34" /></a> <a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/index.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/TOP.png" alt="t" width="57" height="34" /></a></span><a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-07.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/R-arrow.png" alt="r" width="57" height="34" /></a></p>
+</body>
+</html>

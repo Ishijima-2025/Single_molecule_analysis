@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Drag coefficient-03</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">微小物体の粘性抵抗係数-05</h1>
+
+<p>次には<span class="Large-Bold-Red">回転楕円体（Ellipsoid）・回転</span>から．</p>
+<p>Howardの本によると，</p>
+<table width="485" height="308" border="1">
+  <tr>
+    <td width="106" height="55">Parameter</td>
+    <td width="178">Direction</td>
+    <td width="179"><p>Ellipsoid<br />
+      (b&gt;&gt;a)</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-obal.png" width="121" height="73" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp; \(\Large \gamma_r \)</td>
+    <td>&nbsp; <img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-Rotation-1.png" width="103" height="97" /></td>
+    <td>&nbsp; \(\Large \frac{ \frac{8}{3} \pi \eta b^3}{ln((2b)/a)-0.5} \)</td>
+  </tr>
+  <tr>
+    <td>&nbsp; \(\Large \gamma_a \)</td>
+    <td>&nbsp; <img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-Rotation-2.png" width="134" height="49" /></td>
+    <td>&nbsp; \(\Large \frac{16}{3} \pi \eta a^2 b \)</td>
+  </tr>
+</table>
+<p>となっています．図示すると，回転はほぼ破綻なく再現できていることがわかります．</p>
+<p>グラフは前ページより範囲を狭めていますので（横軸，0～2），ちょっと0.5あたりで上昇しています．</p>
+<p><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-13.png" width="578" height="461" alt=""/></p>
+<p>短軸：0.5 ミクロン</p>
+<p>粘度：1 mPa.s</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・Perrinの論文</p>
+<p>Periin，の論文のどこに掲載されているかを調べると，</p>
+<p>　<span class="Red-Bold">式6,7，</span></p>
+<p>に回転の式が掲載されていました．</p>
+<p class="Blue-Bold">式6</p>
+<p>\(\Large C_{1} = \frac{16  \pi}{3}  \eta \frac{b^2 + c^2}{b^2Q +c^2R} \)</p>
+<p> \(\Large C_{2} = \frac{16  \pi}{3}  \eta \frac{c^2 + a^2}{c^2R +a^2P} \)</p>
+<p> \(\Large C_{3} = \frac{16  \pi}{3}  \eta \frac{a^2 + b^2}{a^2P +b^2Q} \)</p>
+<p>&nbsp;</p>
+<p>\(\Large P = \frac{1}{a^2 - b^2} \left( S - \frac{2}{a} \right) \)</p>
+<p> \(\Large Q = \frac{1}{2} \frac{1}{a^2 - b^2} \left(  \frac{2a}{b^2} -S \right) \)</p>
+<p class="Blue-Bold">式10</p>
+<p>\(\Large S = \frac{2}{\sqrt{a^2 - b^2}} \ ln \left( \frac{a + \sqrt{a^2 - b^2}}{b}\right) \)</p>
+<p>&nbsp;</p>
+<p>ここで，断面が円の回転楕円体を考えているので，</p>
+<p> 　<span class="Large-Bold-Red">b = c, Q = R, C<sub>2</sub> = C<sub>3</sub></span></p>
+<p>と考えると，</p>
+<p>\(\Large C_{1} = \frac{16  \pi}{3}  \eta \frac{b^2 + c^2}{b^2Q +c^2R} = \frac{16  \pi}{3}  \eta \frac{2b^2 }{2b^2 Q} = \frac{16  \pi}{3}  \eta \frac{1 }{ Q} \)</p>
+<p> \(\Large \hspace{20pt} = \frac{16  \pi}{3}  \eta \ 2 (a^2 - b^2) \frac{1}{\frac{2a}{b^2} -S} \)</p>
+<p> \(\Large \hspace{20pt}  = \frac{32  \pi}{3}  \eta \   \frac{(a^2 - b^2) b^2}{2a - b^2 S} \)</p>
+<p> \(\Large C_{2} = C_{3} =\frac{16  \pi}{3}  \eta \frac{c^2 + a^2}{c^2R +a^2P}  \)</p>
+<p> \(\Large \hspace{20pt}  = \frac{16  \pi}{3}  \eta \frac{b^2 + a^2}{b^2 \frac{1}{2} \frac{1}{a^2 - b^2} \left(  \frac{2a}{b^2} -S \right) +a^2 \frac{1}{a^2 - b^2} \left( S - \frac{2}{a} \right)}  \)</p>
+<p> \(\Large \hspace{20pt}  = \frac{16  \pi}{3}  \eta \frac{(a^2 + b^2)(a^2 - b^2)}{b^2 \frac{1}{2}  \left(  \frac{2a}{b^2} -S \right) +a^2  \left( S - \frac{2}{a} \right)}  \)</p>
+<p> \(\Large \hspace{20pt}  = \frac{32  \pi}{3}  \eta \frac{(a^2 + b^2)(a^2 - b^2)}{b^2   \left(  \frac{2a}{b^2} -S \right) + 2a^2  \left( S - \frac{2}{a} \right)}  \)</p>
+<p> \(\Large \hspace{20pt}  = \frac{32  \pi}{3}  \eta \frac{(a^2 + b^2)(a^2 - b^2)}{2a -b^2 S  + 2a^2   S - 4a }  \)</p>
+<p> \(\Large \hspace{20pt}  = \frac{32  \pi}{3}  \eta \frac{a^4 - b^4}{(2a^2 - b^2 )S - 2a}  \)</p>
+<p>したがって， <br />
+\(\Large C_{1} = \frac{32  \pi}{3}  \eta \frac{(a^2 - b^2) b^2}{2a - b^2 S}  \)</p>
+<p> \(\Large C_{2} = C_{3} = \frac{32  \pi}{3}  \eta \frac{a^4 - b^4}{(2a^2 - b^2 )S - 2a}  \)</p>
+<p>&nbsp;</p>
+<p>となります．この式を用いて，Howardの式，と比較してみると，</p>
+<p><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-14.png" width="593" height="473" alt=""/></p>
+<p>と長軸半径aが，小さくても（短軸半径と同程度），破綻なく再現できていることがわかります．</p>
+<p>丸点線，は球の場合の粘性抵抗係数です，長軸，短軸ともにうまく収束していく　ことがわかります．</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Red">・PerrinとHowardとの比較</span></p>
+<p>では，Howardはどのような近似を行ったのでしょう？</p>
+<p>Howardの式は，<span class="Blue-Bold">回転</span>は，</p>
+<p>b : 長軸半径</p>
+<p> a : 短軸半径</p>
+<p>&nbsp; \(\Large C_1 = \frac{16}{3} \pi \eta a^2 b \)</p>
+<p>&nbsp; \(\Large C_2 = C_3 = \frac{ \frac{8}{3} \pi \eta b^3}{ln((2b)/a)-0.5} \)</p>
+<p>&nbsp;</p>
+<p>ですが，<span class="Blue">なぜか長軸と短軸の表記がPerrinとは逆</span>になっています．そこで，Perrinの表記に従うように修正すると，</p>
+<p>a : 長軸半径 </p>
+<p>b : 短軸半径</p>
+<p>\(\Large C_{1} = \frac{16  }{3}  \pi \eta a  b^2 \)</p>
+<p>\(\Large  C_{2} = C_{3} = \frac{8  \pi}{3}  \eta \frac{ a^3}{ln(2a/b) - 0.5} \)</p>
+<p>とします．</p>
+<p><span class="Blue-Bold">Perrinの式において，a &gt;&gt; bと近似</span>すると， </p>
+<p>\(\Large  S = \frac{2}{\sqrt{a^2 - b^2}} \ ln \left( \frac{a + \sqrt{a^2 - b^2}}{b}\right)  \simeq  \frac{2}{a} \ ln \left( \frac{2a}{b}\right) \)</p>
+<p>&nbsp;</p>
+<p>\(\Large C_{1} = \frac{32  \pi}{3}  \eta \frac{(a^2 - b^2) b^2}{2a - b^2 S} \)</p>
+<p> \(\Large \hspace{20pt}  \simeq \frac{32  \pi}{3}  \eta \frac{a^2  b^2}{2a} \)</p>
+<p> \(\Large \hspace{20pt}  = \frac{16  \pi}{3}  \eta ab^2 \)</p>
+<p>と一致することがわかります．</p>
+<p>\(\Large C_{2} = C_{3} = \frac{32  \pi}{3}  \eta \frac{a^4 - b^4}{(2a^2 - b^2) S - 2a} \)</p>
+<p> \(\Large \hspace{20pt}  \simeq \frac{32  \pi}{3}  \eta \frac{a^4 }{2a^2 \frac{2}{a} \ ln \left( \frac{2a}{b}\right)  - 2a} \)</p>
+<p> \(\Large \hspace{20pt}  = \frac{32  \pi}{3}  \eta \frac{a^3 }{4 \ ln \left( \frac{2a}{b}\right)  - 2} \)</p>
+<p> \(\Large \hspace{20pt}  = \frac{8  \pi}{3}  \eta \frac{a^3 }{ ln ( 2a/b)  - 0.5} \)</p>
+<p> と一致することがわかります．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>次は，<span class="Large-Bold-Red">回転楕円体（Ellipsoid）のPerrinの式をp=a/bに置き換える</span>と，どうなるか，を考えていきましょう</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-04.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/L-arrow.png" alt="l" width="57" height="34" /></a> <a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/index.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/TOP.png" alt="t" width="57" height="34" /></a></span><a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-06.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/R-arrow.png" alt="r" width="57" height="34" /></a></p>
+</body>
+</html>

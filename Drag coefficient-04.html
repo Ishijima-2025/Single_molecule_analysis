@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Drag coefficient-03</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+.style10 {color: #000000; }
+.style1 {color: #0000FF}
+.style2 {	font-size: large;
+	color: #0000FF;
+}
+.style3 {	font-size: x-large;
+	color: #FF0000;
+}
+.style5 {font-size: x-large; color: #FF0000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">微小物体の粘性抵抗係数-04</h1>
+
+<p>次には<span class="Large-Bold-Red">回転楕円体（Ellipsoid）・並進</span>から．</p>
+<p>Howardの本によると，</p>
+<table width="485" height="308" border="1">
+  <tr>
+    <td width="106" height="55">Parameter</td>
+    <td width="178">Direction</td>
+    <td width="179"><p>Ellipsoid<br />
+      (b&gt;&gt;a)</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-obal.png" width="121" height="73" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp; \(\Large \gamma_{ \parallel }\)</td>
+    <td>&nbsp; <img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-Long.png" width="153" height="27" /></td>
+    <td>&nbsp; \(\Large \frac{4 \pi \eta b}{ln((2b)/a)-0.5} \)</td>
+  </tr>
+  <tr>
+    <td>&nbsp; \(\Large \gamma_{ \perp } \)</td>
+    <td>&nbsp; <img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-Short.png" width="103" height="71" /></td>
+    <td>&nbsp; \(\Large \frac{8 \pi \eta b}{ln((2b)/a)+0.5} \)</td>
+  </tr>
+</table>
+<p>となっています．図示すると，長軸方向への並進が長軸半径が小さくなると変なカーブになります</p>
+<p><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-11.png" width="579" height="513" alt=""/></p>
+<p>短軸：0.5 ミクロン</p>
+<p>粘度：1 mPa.s</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・Perrinの論文</p>
+<p>Howardの教科書の図の説明を見ると，</p>
+<p>and those for prolate ellipsoids are from Perrin, 1934.</p>
+<p>とあります．1934年！昭和9年！，早速調べていきましょう．</p>
+<p>さて，調べてみると，</p>
+<p>Brownian Motion and Dielectric Dispersion of Ellipsoidal Molecules 1934<br />
+  Mouvement brownien d&rsquo;un ellipsoide - I. Dispersion diélectrique pour des molécules ellipsoidales<br />
+LE JOURNAL DE PHYSIQUE ET LE RAD1UM</p>
+<p>というもので，<a href="https://jphysrad.journaldephysique.org/en/articles/jphysrad/abs/1934/10/jphysrad_1934__5_10_497_0/jphysrad_1934__5_10_497_0.html" target="_blank">ここ</a>，がヒットしました．</p>
+<p>しかし．．．．<span class="Large-Bold-Blue">フランス語！</span>，さらに<span class="Large-Bold-Blue">有料，15ユーロ</span>，ということで諦めかけていたのですが．．．．</p>
+<p>フランスの国立オープンアーカイブ HAL (Hyper Articles en Ligne) にて「Journal de Physique Archives」としてデジタル化されており、<a href="https://hal.science/jpa-00233265/document" target="_blank">そちらから</a>無料（オープンアクセス）でダウンロードが可能でした．</p>
+<p>多分，変なサイトじゃないと思います．</p>
+<p>しかし．．．フランス語の論文なので，なかなか解読するのは大変．．．ということで，Google notebook LM，の力を借りて調べてみると，</p>
+<p>　<span class="Red-Bold">式8,10，</span></p>
+<p>に並進の式が掲載されていました．</p>
+<p class="Blue-Bold">式8</p>
+<p>\(\Large f_{||} = 16  \pi  \eta \frac{a^2 - b^2}{(2a^2 - b^2)S - 2a} \)</p>
+<p>\(\Large f_{\bot} = 32  \pi  \eta \frac{a^2 - b^2}{(2a^2 - 3b^2)S + 2a} \)</p>
+<p class="Blue-Bold">式10</p>
+<p>\(\Large S = \frac{2}{\sqrt{a^2 - b^2}} \ ln \left( \frac{a + \sqrt{a^2 - b^2}}{b}\right) \)</p>
+<p>この式を用いて，Howardの式，と比較してみると，</p>
+<p><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-12.png" width="590" height="522" alt=""/></p>
+<p>と長軸半径aが，小さくても（短軸半径と同程度），破綻なく再現できていることがわかります．</p>
+<p>丸点線，は球の場合の粘性抵抗係数です，長軸，短軸ともにうまく収束していく　ことがわかります．</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Red">・PerrinとHowardとの比較</span></p>
+<p>では，Howardはどのような近似を行ったのでしょう？</p>
+<p>Howardの式は，並進は，</p>
+<p>b : 長軸半径</p>
+<p> a : 短軸半径</p>
+<p> \(\Large  f_{||} =  \frac{4  \pi  \eta b}{ln(2b/a) - 0.5} \)</p>
+<p>\(\Large  f_{\bot} =  \frac{8  \pi  \eta b}{ln(2b/a) + 0.5} \)</p>
+<p>ですが，<span class="Blue">なぜか長軸と短軸の表記がPerrinとは逆</span>になっています．そこで，Perrinの表記に従うように修正すると，</p>
+<p>a : 長軸半径 </p>
+<p>b : 短軸半径</p>
+<p>\(\Large  f_{||} =  \frac{4  \pi  \eta a}{ln(2a/b) - 0.5} \)</p>
+<p>\(\Large  f_{\bot} =  \frac{8  \pi  \eta a}{ln(2a/b) + 0.5} \)</p>
+<p>とします．</p>
+<p><span class="Blue-Bold">Perrinの式において，a &gt;&gt; bと近似</span>すると， </p>
+<p>\(\Large  S = \frac{2}{\sqrt{a^2 - b^2}} \ ln \left( \frac{a + \sqrt{a^2 - b^2}}{b}\right)  \simeq  \frac{2}{a} \ ln \left( \frac{2a}{b}\right) \)</p>
+<p>&nbsp;</p>
+<p> \(\Large f_{||} = 16  \pi  \eta \frac{a^2 - b^2}{(2a^2 - b^2)S - 2a}  \simeq 16  \pi  \eta \frac{a^2}{2a^2 \ \frac{2}{a} \ ln \left( \frac{2a}{b}\right) - 2a} \)</p>
+<p> \(\Large = 16  \pi  \eta \frac{a}{4 \ ln ( 2a/b) - 2}  =  \frac{4  \pi  \eta a}{ln(2a/b) - 0.5} \)</p>
+<p> と一致することがわかります．</p>
+<p>&nbsp;</p>
+<p> \(\Large f_{\bot} = 32  \pi  \eta \frac{a^2 - b^2}{(2a^2 - 3b^2)S + 2a}  \simeq 32  \pi  \eta \frac{a^2}{2a^2  \ \frac{2}{a} \ ln \left( \frac{2a}{b}\right) + 2a} \)</p>
+<p> \(\Large = 32  \pi  \eta \frac{a}{4  \  ln \left( \frac{2a}{b}\right) + 2} = \frac{8  \pi  \eta a}{  ln (2a/b) + 0.5} \)</p>
+<p>  と一致することがわかります．</p>
+<p>&nbsp;</p>
+<p>次は，<span class="Large-Bold-Red">回転楕円体（Ellipsoid）の回転</span>，を考えていきましょう</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-03.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/L-arrow.png" alt="l" width="57" height="34" /></a> <a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/index.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/TOP.png" alt="t" width="57" height="34" /></a></span><a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-05.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/R-arrow.png" alt="r" width="57" height="34" /></a></p>
+</body>
+</html>

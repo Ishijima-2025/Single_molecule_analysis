@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Drag coefficient-01</title>
+<title>Drag coefficient-03</title>
 <script type="text/javascript"
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
 </script>
@@ -23,31 +23,18 @@
 </head>
 
 <body>
-<h1 class="style1">微小物体の粘性抵抗係数-01</h1>
+<h1 class="style1">微小物体の粘性抵抗係数-07</h1>
 
-<p>水溶液中の微小物体の粘性抵抗係数について考えていきましょう．<br />
-水溶液中で微小物体であるので，基本的には小さなレイノルズ数の場合を扱いますので，基本的には，<br />
-　ストークスの法則に従う<br />
-　乱流などを考慮しない<br />
-場合を考えます．</p>
-<p>また，私の力量ではストークスの法則自体を解くことができませんので，各文献を調べて，各形状による粘性抵抗係数の考え方を考えていきたいと思います．</p>
-<p>J. Howardの著書，”<a href="http://www.sinauer.com/media/wysiwyg/tocs/MotorProteins.pdf" target="_blank">Mechanics of Motor Proteins and the Cytoskeleton</a>”によると</p>
-<p>&nbsp; </p>
-<p>
-  <video src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Long.mp4" controls autoplay loop width="320" height="240"></video>
-  <video src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Short.mp4" controls autoplay loop width="320" height="240"></video>
-  <video src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/rotation.mp4" controls autoplay loop width="320" height="240"></video>  
-</p>
-<p>&nbsp; \(\Large \hspace{ 60pt} \gamma_{ \parallel }  \hspace{ 150pt } \gamma_{ \perp } \hspace{ 150pt } \gamma_r \)</p>
-<p>&nbsp;</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p>Howardの本では，<span class="Large-Bold-Red">ロッド，回転楕円体，球</span>，についての計算式を示していました．</p>
 <table width="779" height="308" border="1">
   <tr>
     <td width="106" height="55">Parameter</td>
     <td width="178">Direction</td>
     <td width="208"><p>Cylinder<br />
-    (L&gt;&gt;r)</p></td>
+      (L&gt;&gt;r)</p></td>
     <td width="179"><p>Ellipsoid<br />
-    (b&gt;&gt;a)</p></td>
+      (b&gt;&gt;a)</p></td>
     <td width="74">Sphere</td>
   </tr>
   <tr>
@@ -58,7 +45,7 @@
     <td><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-sphere.png" width="56" height="56" /></td>
   </tr>
   <tr>
-    <td> &nbsp; \(\Large \gamma_{ \parallel }\)</td>
+    <td>&nbsp; \(\Large \gamma_{ \parallel }\)</td>
     <td>&nbsp; <img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-Long.png" width="153" height="27" /></td>
     <td>&nbsp; \(\Large \frac{2 \pi \eta L}{ln(L/(2r))-0.20} \)</td>
     <td>&nbsp; \(\Large \frac{4 \pi \eta b}{ln((2b)/a)-0.5} \)</td>
@@ -86,13 +73,29 @@
     <td>&nbsp; \(\Large 8 \pi \eta r^3 \)</td>
   </tr>
 </table>
-<p>（すいません，3乗，を書き忘れていました，<span class="Red">赤字</span>，で修正しました）</p>
-<p>ここで注意すべき点は，</p>
-<p>Cylinder (L&gt;&gt;r)<br />
-Ellipsoid (b&gt;&gt;a)</p>
-<p>とあるように，かなり細長い（アスペクト比の高い）形状でしか成り立たない式と言うことです．</p>
-<p>では，L≒ｒ，ｂ≒ａ，の場合にこの式を使うとどうなるかを考えてみましょう．</p>
+<p>たぶん．．．．歴史的な背景，計算そのものの違い，といったところで分類していると思うのですが，</p>
+<p>　<span class="Blue-Bold">実際，ロッドと回転楕円体，どのくらい違うの？</span></p>
+<p>という疑問がわきます．生物物理屋，からいうと，どちらでもいいんじゃない？なんて思ったりするのですが．．．．</p>
 <p>&nbsp;</p>
-<p><span class="style7"><a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/index.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/TOP.png" alt="t" width="57" height="34" /></a> <a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-02.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+<p>では，実際に公式から確かめてみましょう．</p>
+<p>式は，<span class="Red-Bold">ロッドに関しては，補正項あり</span>，<span class="Red-Bold">回転楕円体は，Perrinのオリジナルの式</span>　用いて比較してみました．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・並進</p>
+<p><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-15.png" width="688" height="550" alt=""/></p>
+<p>短軸半径：0.5ミクロン，粘度：1 mPa.s，で計算したものです．</p>
+<p>ロッドのほうが若干粘性抵抗係数が高くなっていますが，まあ，<span class="Large-Bold-Blue">１．数倍</span>，程度．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・回転</p>
+<p><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-16.png" width="692" height="553" alt=""/></p>
+<p>これも，ロッドのほうが若干粘性抵抗係数が高くなっていますが，まあ，<span class="Large-Bold-Blue">１．数倍</span>，程度．</p>
+<p>長軸方向の差が見にくいので，長軸方向のみグラフ化すると，</p>
+<p><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-17.png" width="697" height="557" alt=""/></p>
+<p>若干差が出たようですが，やはり，<span class="Large-Bold-Blue">１．数倍</span>，程度．</p>
+<p>多分，実験結果のばらつきのほうが大きくて，余り気にしなくてもいいのかもしれません．．．（私の研究レベルでは．．．）</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/Drag coefficient-06.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/L-arrow.png" alt="l" width="57" height="34" /></a> <a href="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/index.html"><img src="../../../My Documents/HOMEPAGE/阪大_公開鍵-石島研/00_HomePage/TOP.png" alt="t" width="57" height="34" /></a></span></p>
 </body>
 </html>
